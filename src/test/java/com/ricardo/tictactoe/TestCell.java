@@ -1,8 +1,11 @@
 package com.ricardo.tictactoe;
 
-public class testCell {
+import org.junit.Assert;
+import org.junit.Test;
+
+public class TestCell {
     @Test
-    public void testFreeCellReturnTrue(){
+    public void testNewCellsAreAlwaysFreeReturnTrue(){
         Cell cell = new Cell();
 
         boolean free = cell.isFree();
