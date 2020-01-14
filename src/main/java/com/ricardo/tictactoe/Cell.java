@@ -15,6 +15,7 @@ public class Cell {
 
     public void putShape(IShape aShape) {
         if(!cellFree) return;
+
         this.cellFree = false;
         this.shape = aShape;
     }
