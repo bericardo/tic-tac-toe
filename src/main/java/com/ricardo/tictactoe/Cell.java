@@ -20,6 +20,7 @@ public class Cell {
     }
 
     public boolean compare(IShape aShape) {
+        if(cellFree) return false;
         return this.shape.compare(aShape);
     }
 }

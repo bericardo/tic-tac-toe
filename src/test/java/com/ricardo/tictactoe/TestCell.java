@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class TestCell {
     @Test
-    public void testNewCellIsFreeReturnTrue(){
+    public void testANewCellIsAlwaysFreeReturnTrue(){
         Cell cell = new Cell();
 
         boolean free = cell.isFree();
@@ -46,5 +46,15 @@ public class TestCell {
         boolean sameShape = cell.compare(cross);
 
         Assert.assertEquals(true, sameShape);
+    }
+
+    @Test
+    public void testComparingShapeWithEmptyCellReturnFalse(){
+        Cell cell = new Cell();
+        IShape cross = new Cross();
+
+        boolean sameShape = cell.compare(cross);
+
+        Assert.assertEquals(false, sameShape);
     }
 }
