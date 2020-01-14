@@ -3,6 +3,7 @@ package com.ricardo.tictactoe;
 public class Cell {
 
     private boolean cellFree;
+    private IShape shape;
 
     public Cell(){
         this.cellFree = true;
@@ -13,10 +14,12 @@ public class Cell {
     }
 
     public void putShape(IShape aShape) {
+        if(!cellFree) return;
         this.cellFree = false;
+        this.shape = aShape;
     }
 
-    public boolean compare(IShape circle) {
-        return false;
+    public boolean compare(IShape aShape) {
+        return this.shape.compare(aShape);
     }
 }

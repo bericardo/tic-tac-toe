@@ -36,4 +36,15 @@ public class TestCell {
 
      Assert.assertEquals(false, sameShape);
     }
+
+    @Test
+    public void testPutShapeInFreeCellStoresThatShapeReturnTrue(){
+        Cell cell = new Cell();
+        IShape cross = new Cross();
+
+        cell.putShape(cross);
+        boolean sameShape = cell.compare(cross);
+
+        Assert.assertEquals(true, sameShape);
+    }
 }
