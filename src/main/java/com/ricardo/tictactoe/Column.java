@@ -15,4 +15,12 @@ public class Column {
         Cell cell = this.cellList.get(position);
         cell.putShape(aShape);
     }
+
+    public boolean checkForWinner(IShape aShape) {
+        boolean res1 = this.cellList.get(0).compare(aShape);
+        boolean res2 = this.cellList.get(1).compare(aShape);
+        boolean res3 = this.cellList.get(2).compare(aShape);
+
+        return (res1 && res2 && res3);
+    }
 }
