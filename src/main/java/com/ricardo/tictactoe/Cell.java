@@ -12,7 +12,7 @@ public class Cell {
         return this.cellFree;
     }
 
-    public void putShape(Ishape cross) {
+    public void putShape(IShape aShape) {
         this.cellFree = false;
     }
 }
