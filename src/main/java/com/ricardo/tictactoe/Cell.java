@@ -15,4 +15,8 @@ public class Cell {
     public void putShape(IShape aShape) {
         this.cellFree = false;
     }
+
+    public boolean compare(IShape circle) {
+        return false;
+    }
 }

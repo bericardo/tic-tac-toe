@@ -16,11 +16,24 @@ public class TestCell {
     @Test
     public void testCellIsNotFreeWhenHasShapeReturnFalse(){
         Cell cell = new Cell();
-        Ishape cross = new Cross();
+        IShape cross = new Cross();
 
         cell.putShape(cross);
         boolean free = cell.isFree();
 
         Assert.assertEquals(false, free);
+    }
+
+    @Test
+    public void testPuttingNewShapeOnCellWhichHasAShapeDoesntChangeShapeAlreadyStored(){
+     Cell cell = new Cell();
+     IShape cross = new Cross();
+     IShape circle = new Circle();
+
+     cell.putShape(cross);
+     cell.putShape(circle);
+     boolean sameShape = cell.compare(circle);
+
+     Assert.assertEquals(false, sameShape);
     }
 }

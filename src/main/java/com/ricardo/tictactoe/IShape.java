@@ -1,4 +1,4 @@
 package com.ricardo.tictactoe;
 
-public interface Ishape {
+public interface IShape {
 }
