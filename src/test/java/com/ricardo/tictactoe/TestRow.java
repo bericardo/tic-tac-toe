@@ -30,4 +30,43 @@ public class TestRow {
 
         Assert.assertEquals(true, good);
     }
+
+    @Test
+    public void testAllColumnCellAreEmptyNoOneWinsReturnFalse(){
+        Row row = new Row(this.SIZE);
+        IShape cross = new Cross();
+
+        boolean gameOver = row.checkForWinner(cross);
+
+        Assert.assertEquals(false, gameOver);
+    }
+
+    @Test
+    public void testAllCellHaveTheSameShapeGameOverReturnTrue(){
+        Row row = new Row(this.SIZE);
+        IShape cross = new Cross();
+        row.putShape(cross, 0);
+        row.putShape(cross, 1);
+        row.putShape(cross, 2);
+
+        boolean gameOver = row.checkForWinner(cross);
+
+        Assert.assertEquals(true, gameOver);
+    }
+
+    @Test
+    public void testWhenCellHaveDifferentShapesNoOneWinsReturnFalse(){
+        Row row = new Row(this.SIZE);
+        IShape cross = new Cross();
+        IShape circle = new Circle();
+        row.putShape(cross,0);
+        row.putShape(circle, 1);
+        row.putShape(cross, 2);
+
+        boolean gameOver1 = row.checkForWinner(cross);
+        boolean gameOver2 = row.checkForWinner(circle);
+        boolean gameOverFinal = gameOver1 || gameOver2;
+
+        Assert.assertEquals(false,gameOverFinal);
+    }
 }

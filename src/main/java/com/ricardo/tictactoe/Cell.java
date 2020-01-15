@@ -13,8 +13,9 @@ public class Cell {
         return this.cellFree;
     }
 
-    public void putShape(IShape aShape) {
+    public void putShape(IShape aShape){
         if(!cellFree) return;
+        if(aShape == null) throw new InvalidShapeException();
 
         this.cellFree = false;
         this.shape = aShape;

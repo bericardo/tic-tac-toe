@@ -57,4 +57,12 @@ public class TestCell {
 
         Assert.assertEquals(false, sameShape);
     }
+
+    @Test (expected = InvalidShapeException.class)
+    public void testPlacingShapePointingToNullThrowException(){
+        Cell cell = new Cell();
+        IShape cross = null;
+
+        cell.putShape(cross);
+    }
 }
