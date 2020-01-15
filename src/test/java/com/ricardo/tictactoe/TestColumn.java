@@ -12,12 +12,7 @@ public class TestColumn {
         IShape cross = new Cross();
         int colPosition = 4;
 
-        try {
-            col.putShape(cross, colPosition);
-            Assert.assertTrue(false);
-        } catch (Exception e) {
-            throw new IndexOutOfBoundsException();
-        }
+        col.putShape(cross, colPosition);
     }
 
     @Test
