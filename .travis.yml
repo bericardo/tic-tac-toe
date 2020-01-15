@@ -5,5 +5,3 @@ jdk:
 dist: trusty
  
 sudo: false
-
-mvn test -B
