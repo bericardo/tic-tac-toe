@@ -2,6 +2,8 @@ language: java
 jdk:
   - oraclejdk8
   
- dist: trusty
+dist: trusty
  
- sudo: false
+sudo: false
+
+mvn test -B
