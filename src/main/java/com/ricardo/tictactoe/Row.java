@@ -12,8 +12,8 @@ public class Row {
             this.cellList.add(new Cell());
     }
 
-    public void putShape(IShape aShape, int rowPosition) {
-        Cell cell = this.cellList.get(rowPosition);
+    public void putShape(IShape aShape, int cellPos) {
+        Cell cell = this.cellList.get(cellPos);
         cell.putShape(aShape);
     }
 
@@ -23,5 +23,9 @@ public class Row {
         boolean res3 = this.cellList.get(2).compare(aShape);
 
         return (res1 && res2 && res3);
+    }
+
+    public boolean compareWithShapeInCell(IShape aShape, int pos) {
+        return this.cellList.get(pos).compare(aShape);
     }
 }
