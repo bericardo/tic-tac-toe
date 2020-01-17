@@ -57,7 +57,7 @@ public class TestBoard {
         Assert.assertEquals(true, gameOver);
     }
 
-    @Test (expected = IndexOutOfBoundsException.class)
+    @Test (expected = InvalidPositionException.class)
     public void testPassingCellPositionGreaterThan2ThrowException(){
         Board board = new Board();
         IShape cross = new Cross();
@@ -65,7 +65,7 @@ public class TestBoard {
         board.putShape(cross, 3, 3);
     }
 
-    @Test (expected = IndexOutOfBoundsException.class)
+    @Test (expected = InvalidPositionException.class)
     public void testPassingCellPositionLessThan0ThrowException(){
         Board board = new Board();
         IShape cross = new Cross();

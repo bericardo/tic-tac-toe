@@ -18,6 +18,11 @@ public class Board {
     }
 
     public void putShape(IShape aShape, int rowPos, int colPos) {
+        boolean rowInBounds = ((rowPos >= 0) && (rowPos < BOARD_SIZE));
+        boolean colInBounds = ((colPos >= 0) && (colPos < BOARD_SIZE));
+
+        if(!rowInBounds || !colInBounds) throw new InvalidPositionException();
+
         this.rowList.get(rowPos).putShape(aShape, colPos);
         this.colList.get(colPos).putShape(aShape, rowPos);
     }
