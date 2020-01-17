@@ -17,8 +17,8 @@ public class TestCell {
     public void testCellIsNotFreeWhenHasShapeReturnFalse(){
         Cell cell = new Cell();
         IShape cross = new Cross();
-
         cell.putShape(cross);
+
         boolean free = cell.forTest_isFree();
 
         Assert.assertEquals(false, free);
@@ -29,9 +29,9 @@ public class TestCell {
      Cell cell = new Cell();
      IShape cross = new Cross();
      IShape circle = new Circle();
-
      cell.putShape(cross);
      cell.putShape(circle);
+
      boolean sameShape = cell.compare(circle);
 
      Assert.assertEquals(false, sameShape);
@@ -41,8 +41,8 @@ public class TestCell {
     public void testPutShapeInFreeCellStoresThatShapeReturnTrue(){
         Cell cell = new Cell();
         IShape cross = new Cross();
-
         cell.putShape(cross);
+
         boolean sameShape = cell.compare(cross);
 
         Assert.assertEquals(true, sameShape);
