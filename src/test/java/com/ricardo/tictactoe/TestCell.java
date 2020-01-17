@@ -65,4 +65,14 @@ public class TestCell {
 
         cell.putShape(cross);
     }
+
+    @Test (expected = InvalidShapeException.class)
+    public void testCompareShapeWhichIsNullThrowException(){
+        Cell cell = new Cell();
+        IShape cross = new Cross();
+        IShape circle = null;
+        cell.putShape(cross);
+
+        cell.compare(circle);
+    }
 }

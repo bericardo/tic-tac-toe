@@ -12,11 +12,11 @@ public class Cell {
     }
 
     public void putShape(IShape aShape){
-        if(aShape == null) throw new InvalidShapeException();
         this.state = this.state.putShape(aShape);
     }
 
     public boolean compare(IShape aShape) {
+        if(aShape == null) throw new InvalidShapeException();
         return this.state.compare(aShape);
     }
 }
