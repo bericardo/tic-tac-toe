@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class TestCell {
     @Test
-    public void testANewCellIsAlwaysFreeReturnTrue(){
+    public void testANewCellIsAlwaysFreeReturnTrue() {
         Cell cell = new Cell();
 
         boolean free = cell.forTest_isFree();
@@ -19,7 +19,7 @@ public class TestCell {
     }
 
     @Test
-    public void testCellIsNotFreeWhenHasShapeReturnFalse(){
+    public void testCellIsNotFreeWhenHasShapeReturnFalse() {
         Cell cell = new Cell();
         IShape cross = new Cross();
         cell.putShape(cross);
@@ -30,20 +30,20 @@ public class TestCell {
     }
 
     @Test
-    public void testPuttingNewShapeOnCellWhichHasAShapeDoesntChangeShapeAlreadyStored(){
-     Cell cell = new Cell();
-     IShape cross = new Cross();
-     IShape circle = new Circle();
-     cell.putShape(cross);
-     cell.putShape(circle);
+    public void testPuttingNewShapeOnCellWhichHasAShapeDoesntChangeShapeAlreadyStored() {
+        Cell cell = new Cell();
+        IShape cross = new Cross();
+        IShape circle = new Circle();
+        cell.putShape(cross);
+        cell.putShape(circle);
 
-     boolean sameShape = cell.compare(circle);
+        boolean sameShape = cell.compare(circle);
 
-     Assert.assertEquals(false, sameShape);
+        Assert.assertEquals(false, sameShape);
     }
 
     @Test
-    public void testPutShapeInFreeCellStoresThatShapeReturnTrue(){
+    public void testPutShapeInFreeCellStoresThatShapeReturnTrue() {
         Cell cell = new Cell();
         IShape cross = new Cross();
         cell.putShape(cross);
@@ -54,7 +54,7 @@ public class TestCell {
     }
 
     @Test
-    public void testComparingShapeWithEmptyCellReturnFalse(){
+    public void testComparingShapeWithEmptyCellReturnFalse() {
         Cell cell = new Cell();
         IShape cross = new Cross();
 
@@ -63,16 +63,16 @@ public class TestCell {
         Assert.assertEquals(false, sameShape);
     }
 
-    @Test (expected = InvalidShapeException.class)
-    public void testPlacingShapePointingToNullThrowException(){
+    @Test(expected = InvalidShapeException.class)
+    public void testPlacingShapePointingToNullThrowException() {
         Cell cell = new Cell();
         IShape cross = null;
 
         cell.putShape(cross);
     }
 
-    @Test (expected = InvalidShapeException.class)
-    public void testCompareShapeWhichIsNullThrowException(){
+    @Test(expected = InvalidShapeException.class)
+    public void testCompareShapeWhichIsNullThrowException() {
         Cell cell = new Cell();
         IShape cross = new Cross();
         IShape circle = null;

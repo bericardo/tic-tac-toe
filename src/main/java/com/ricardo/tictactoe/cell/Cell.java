@@ -5,7 +5,7 @@ import com.ricardo.tictactoe.shape.IShape;
 public class Cell {
     private ICellState state;
 
-    public Cell(){
+    public Cell() {
         this.state = new CellFree();
     }
 
@@ -13,12 +13,12 @@ public class Cell {
         return this.state.forTest_isFree();
     }
 
-    public void putShape(IShape aShape){
+    public void putShape(IShape aShape) {
         this.state = this.state.putShape(aShape);
     }
 
     public boolean compare(IShape aShape) {
-        if(aShape == null) throw new InvalidShapeException();
+        if (aShape == null) throw new InvalidShapeException();
         return this.state.compare(aShape);
     }
 }

@@ -10,7 +10,7 @@ import org.junit.Test;
 public class TestBoard {
 
     @Test
-    public void testPlacingSameShapeOnARowWinsGameReturnTrue(){
+    public void testPlacingSameShapeOnARowWinsGameReturnTrue() {
         Board board = new Board();
         IShape cross = new Cross();
         board.putShape(cross, 0, 0);
@@ -23,7 +23,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testPlacingSameShapeOnAColumnWinsGameReturnTrue(){
+    public void testPlacingSameShapeOnAColumnWinsGameReturnTrue() {
         Board board = new Board();
         IShape cross = new Cross();
         board.putShape(cross, 0, 0);
@@ -36,7 +36,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testPlacingSameShapeOnFirstDiagonalWinsMatchReturnTrue(){
+    public void testPlacingSameShapeOnFirstDiagonalWinsMatchReturnTrue() {
         Board board = new Board();
         IShape cross = new Cross();
         board.putShape(cross, 0, 0);
@@ -49,7 +49,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testPlacingSameShapeOnSecondDiagonalWinsMatchReturnTrue(){
+    public void testPlacingSameShapeOnSecondDiagonalWinsMatchReturnTrue() {
         Board board = new Board();
         IShape cross = new Cross();
         board.putShape(cross, 0, 2);
@@ -61,16 +61,16 @@ public class TestBoard {
         Assert.assertEquals(true, gameOver);
     }
 
-    @Test (expected = InvalidPositionException.class)
-    public void testPassingCellPositionGreaterThan2ThrowException(){
+    @Test(expected = InvalidPositionException.class)
+    public void testPassingCellPositionGreaterThan2ThrowException() {
         Board board = new Board();
         IShape cross = new Cross();
 
         board.putShape(cross, 3, 3);
     }
 
-    @Test (expected = InvalidPositionException.class)
-    public void testPassingCellPositionLessThan0ThrowException(){
+    @Test(expected = InvalidPositionException.class)
+    public void testPassingCellPositionLessThan0ThrowException() {
         Board board = new Board();
         IShape cross = new Cross();
 
@@ -78,7 +78,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testCheckingForWinnersOnEmptyBoardReturnFalse(){
+    public void testCheckingForWinnersOnEmptyBoardReturnFalse() {
         Board board = new Board();
 
         boolean thereIsAWinner = board.checkForWinners(new Cross());

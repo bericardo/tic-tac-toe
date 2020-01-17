@@ -12,7 +12,7 @@ public class CellFree implements ICellState {
     }
 
     public ICellState putShape(IShape aShape) {
-        if(aShape == null) throw new InvalidShapeException();
+        if (aShape == null) throw new InvalidShapeException();
         return new CellTaken(aShape);
     }
 }

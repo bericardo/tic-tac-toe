@@ -11,7 +11,7 @@ public class TestRow {
     private final int SIZE = 3;
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void testPuttingShapeInInvalidPositionThrowException(){
+    public void testPuttingShapeInInvalidPositionThrowException() {
         Row row = new Row(this.SIZE);
         IShape cross = new Cross();
         int rowPosition = 4;
@@ -20,13 +20,13 @@ public class TestRow {
     }
 
     @Test
-    public void testPuttingShapeInValidPositionDoesntThrowException(){
+    public void testPuttingShapeInValidPositionDoesntThrowException() {
         Row row = new Row(this.SIZE);
         IShape cross = new Cross();
         int rowPosition = 3;
         boolean good = false;
 
-        try{
+        try {
             row.putShape(cross, rowPosition);
             good = true;
         } catch (Exception e) {
@@ -36,7 +36,7 @@ public class TestRow {
     }
 
     @Test
-    public void testAllColumnCellAreEmptyNoOneWinsReturnFalse(){
+    public void testAllColumnCellAreEmptyNoOneWinsReturnFalse() {
         Row row = new Row(this.SIZE);
         IShape cross = new Cross();
 
@@ -46,7 +46,7 @@ public class TestRow {
     }
 
     @Test
-    public void testAllCellHaveTheSameShapeGameOverReturnTrue(){
+    public void testAllCellHaveTheSameShapeGameOverReturnTrue() {
         Row row = new Row(this.SIZE);
         IShape cross = new Cross();
         row.putShape(cross, 0);
@@ -59,11 +59,11 @@ public class TestRow {
     }
 
     @Test
-    public void testWhenCellHaveDifferentShapesNoOneWinsReturnFalse(){
+    public void testWhenCellHaveDifferentShapesNoOneWinsReturnFalse() {
         Row row = new Row(this.SIZE);
         IShape cross = new Cross();
         IShape circle = new Circle();
-        row.putShape(cross,0);
+        row.putShape(cross, 0);
         row.putShape(circle, 1);
         row.putShape(cross, 2);
 
@@ -71,6 +71,6 @@ public class TestRow {
         boolean gameOver2 = row.checkForWinner(circle);
         boolean gameOverFinal = gameOver1 || gameOver2;
 
-        Assert.assertEquals(false,gameOverFinal);
+        Assert.assertEquals(false, gameOverFinal);
     }
 }

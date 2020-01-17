@@ -10,8 +10,8 @@ import org.junit.Test;
 public class TestColumn {
     private final int SIZE = 3;
 
-    @Test (expected = IndexOutOfBoundsException.class)
-    public void testPuttingShapeInInvalidPositionThrowException(){
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testPuttingShapeInInvalidPositionThrowException() {
         Column col = new Column(this.SIZE);
         IShape cross = new Cross();
         int colPosition = 4;
@@ -20,12 +20,12 @@ public class TestColumn {
     }
 
     @Test
-    public void testPuttingShapeInValidPositionDoesntThrowException(){
+    public void testPuttingShapeInValidPositionDoesntThrowException() {
         Column col = new Column(this.SIZE);
         IShape cross = new Cross();
         int colPosition = 3;
 
-        try{
+        try {
             col.putShape(cross, colPosition);
             Assert.assertTrue(true);
         } catch (Exception e) {
@@ -34,7 +34,7 @@ public class TestColumn {
     }
 
     @Test
-    public void testAllColumnCellAreEmptyNoOneWinsReturnFalse(){
+    public void testAllColumnCellAreEmptyNoOneWinsReturnFalse() {
         Column col = new Column(this.SIZE);
         IShape cross = new Cross();
 
@@ -44,7 +44,7 @@ public class TestColumn {
     }
 
     @Test
-    public void testAllCellHaveTheSameShapeGameOverReturnTrue(){
+    public void testAllCellHaveTheSameShapeGameOverReturnTrue() {
         Column col = new Column(this.SIZE);
         IShape cross = new Cross();
         col.putShape(cross, 0);
@@ -57,11 +57,11 @@ public class TestColumn {
     }
 
     @Test
-    public void testWhenCellHaveDifferentShapesNoOneWinsReturnFalse(){
+    public void testWhenCellHaveDifferentShapesNoOneWinsReturnFalse() {
         Column col = new Column(this.SIZE);
         IShape cross = new Cross();
         IShape circle = new Circle();
-        col.putShape(cross,0);
+        col.putShape(cross, 0);
         col.putShape(circle, 1);
         col.putShape(cross, 2);
 
@@ -69,6 +69,6 @@ public class TestColumn {
         boolean gameOver2 = col.checkForWinner(circle);
         boolean gameOverFinal = gameOver1 || gameOver2;
 
-        Assert.assertEquals(false,gameOverFinal);
+        Assert.assertEquals(false, gameOverFinal);
     }
 }
