@@ -57,14 +57,12 @@ public class Board {
     private boolean checkFirstDiagonal(IShape aShape) {
         boolean diag1HasWinner = true;
 
-        int pos = 0;
         for(int i = 0; i < BOARD_SIZE-1; i++){
             Row aRow = this.rowList.get(i);
-            if(!aRow.compareWithShapeInCell(aShape, pos)){
+            if(!aRow.compareWithShapeInCell(aShape, i)){
                 diag1HasWinner = false;
                 break;
             }
-            pos++;
         }
 
         return diag1HasWinner;
