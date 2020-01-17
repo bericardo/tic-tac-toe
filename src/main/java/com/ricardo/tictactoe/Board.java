@@ -13,7 +13,7 @@ public class Board {
         this.rowList = new ArrayList<Row>();
         this.colList = new ArrayList<Column>();
 
-        for (int i = 0; i <= BOARD_SIZE - 1; i++) {
+        for (int i = 0; i < BOARD_SIZE; i++) {
             this.rowList.add(new Row(BOARD_SIZE));
             this.colList.add(new Column(BOARD_SIZE));
         }
@@ -54,32 +54,25 @@ public class Board {
     }
 
     private boolean checkFirstDiagonal(IShape aShape) {
-        boolean diag1HasWinner = true;
 
-        for (int i = 0; i < BOARD_SIZE - 1; i++) {
+        for (int i = 0; i < BOARD_SIZE; i++) {
             Row aRow = this.rowList.get(i);
-            if (!aRow.compareWithShapeInCell(aShape, i)) {
-                diag1HasWinner = false;
-                break;
-            }
+            if (!aRow.compareWithShapeInCell(aShape, i))
+                return false;
         }
 
-        return diag1HasWinner;
+        return true;
     }
 
     private boolean checkSecondDiagonal(IShape aShape) {
-        boolean diag2HasWinner = true;
 
         int pos = BOARD_SIZE - 1;
-        for (int i = 0; i < BOARD_SIZE - 1; i++) {
+        for (int i = 0; i < BOARD_SIZE; i++) {
             Row aRow = this.rowList.get(i);
-            if (!aRow.compareWithShapeInCell(aShape, pos)) {
-                diag2HasWinner = false;
-                break;
-            }
+            if (!aRow.compareWithShapeInCell(aShape, pos))
+                return false;
             pos--;
         }
-
-        return diag2HasWinner;
+        return true;
     }
 }
