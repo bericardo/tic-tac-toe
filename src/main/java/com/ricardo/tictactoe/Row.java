@@ -28,7 +28,7 @@ public class Row {
         return (res1 && res2 && res3);
     }
 
-    public boolean compareWithShapeInCell(IShape aShape, int pos) {
-        return this.cellList.get(pos).compare(aShape);
+    public boolean compareWithShapeInCell(IShape aShape, int cellPos) {
+        return this.cellList.get(cellPos).compare(aShape);
     }
 }
