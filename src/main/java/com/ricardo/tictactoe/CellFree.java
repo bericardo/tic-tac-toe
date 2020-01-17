@@ -1,7 +1,7 @@
 package com.ricardo.tictactoe;
 
 public class CellFree implements ICellState {
-    public boolean isFree() {
+    public boolean forTest_isFree() {
         return true;
     }
 

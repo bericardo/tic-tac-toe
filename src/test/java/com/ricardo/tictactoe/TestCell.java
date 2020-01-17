@@ -8,7 +8,7 @@ public class TestCell {
     public void testANewCellIsAlwaysFreeReturnTrue(){
         Cell cell = new Cell();
 
-        boolean free = cell.isFree();
+        boolean free = cell.forTest_isFree();
 
         Assert.assertEquals(true, free);
     }
@@ -19,7 +19,7 @@ public class TestCell {
         IShape cross = new Cross();
 
         cell.putShape(cross);
-        boolean free = cell.isFree();
+        boolean free = cell.forTest_isFree();
 
         Assert.assertEquals(false, free);
     }

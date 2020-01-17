@@ -7,7 +7,7 @@ public class CellTaken implements ICellState {
         this.shape = aShape;
     }
 
-    public boolean isFree() {
+    public boolean forTest_isFree() {
         return false;
     }
 

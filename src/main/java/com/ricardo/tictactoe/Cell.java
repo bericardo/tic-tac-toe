@@ -7,8 +7,8 @@ public class Cell {
         this.state = new CellFree();
     }
 
-    public boolean isFree() {
-        return this.state.isFree();
+    public boolean forTest_isFree() {
+        return this.state.forTest_isFree();
     }
 
     public void putShape(IShape aShape){
