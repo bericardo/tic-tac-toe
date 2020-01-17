@@ -11,7 +11,7 @@ public class Board {
         this.rowList = new ArrayList<Row>();
         this.colList = new ArrayList<Column>();
 
-        for(int i = 0; i <= BOARD_SIZE; i++){
+        for(int i = 0; i <= BOARD_SIZE-1; i++){
             this.rowList.add(new Row(BOARD_SIZE));
             this.colList.add(new Column(BOARD_SIZE));
         }
@@ -31,7 +31,7 @@ public class Board {
 
         return (rowHasWinner || colHasWinner || diag1HasWinner || diag2HasWinner);
     }
-    
+
     private boolean checkRows(IShape aShape) {
         for(Row aRow : this.rowList){
             if(aRow.checkForWinner(aShape))

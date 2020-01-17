@@ -56,4 +56,29 @@ public class TestBoard {
 
         Assert.assertEquals(true, gameOver);
     }
+
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void testPassingCellPositionGreaterThan2ThrowException(){
+        Board board = new Board();
+        IShape cross = new Cross();
+
+        board.putShape(cross, 3, 3);
+    }
+
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void testPassingCellPositionLessThan0ThrowException(){
+        Board board = new Board();
+        IShape cross = new Cross();
+
+        board.putShape(cross, -1, -1);
+    }
+
+    @Test
+    public void testCheckingForWinnersOnEmptyBoardReturnFalse(){
+        Board board = new Board();
+
+        boolean thereIsAWinner = board.checkForWinners(new Cross());
+
+        Assert.assertEquals(false, thereIsAWinner);
+    }
 }
