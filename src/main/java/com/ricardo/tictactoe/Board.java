@@ -26,38 +26,12 @@ public class Board {
 
         boolean rowHasWinner = this.checkRows(aShape);
         boolean colHasWinner = this.checkColumns(aShape);
-        boolean diagHasWinner = this.checkDiagonals(aShape);
+        boolean diag1HasWinner = this.checkFirstDiagonal(aShape);
+        boolean diag2HasWinner = this.checkSecondDiagonal(aShape);
 
-        return (rowHasWinner || colHasWinner || diagHasWinner);
+        return (rowHasWinner || colHasWinner || diag1HasWinner || diag2HasWinner);
     }
-
-    private boolean checkDiagonals(IShape aShape) {
-        boolean diag1HasWinner = true;
-        boolean diag2HasWinner = true;
-
-        int pos = 0;
-        for(int i = 0; i < BOARD_SIZE-1; i++){
-            Row aRow = this.rowList.get(i);
-            if(!aRow.compareWithShapeInCell(aShape, pos)){
-                diag1HasWinner = false;
-                break;
-            }
-            pos++;
-        }
-
-        pos = BOARD_SIZE-1;
-        for(int i = 0; i < BOARD_SIZE-1; i++){
-            Row aRow = this.rowList.get(i);
-            if(!aRow.compareWithShapeInCell(aShape, pos)){
-                diag2HasWinner = false;
-                break;
-            }
-            pos--;
-        }
     
-        return (diag1HasWinner || diag2HasWinner);
-    }
-
     private boolean checkRows(IShape aShape) {
         for(Row aRow : this.rowList){
             if(aRow.checkForWinner(aShape))
@@ -71,5 +45,37 @@ public class Board {
             if(aColumn.checkForWinner(aShape)) return true;
         }
         return false;
+    }
+
+    private boolean checkFirstDiagonal(IShape aShape) {
+        boolean diag1HasWinner = true;
+
+        int pos = 0;
+        for(int i = 0; i < BOARD_SIZE-1; i++){
+            Row aRow = this.rowList.get(i);
+            if(!aRow.compareWithShapeInCell(aShape, pos)){
+                diag1HasWinner = false;
+                break;
+            }
+            pos++;
+        }
+
+        return diag1HasWinner;
+    }
+
+    private boolean checkSecondDiagonal(IShape aShape) {
+        boolean diag2HasWinner = true;
+
+        int pos = BOARD_SIZE-1;
+        for(int i = 0; i < BOARD_SIZE-1; i++){
+            Row aRow = this.rowList.get(i);
+            if(!aRow.compareWithShapeInCell(aShape, pos)){
+                diag2HasWinner = false;
+                break;
+            }
+            pos--;
+        }
+
+        return diag2HasWinner;
     }
 }
