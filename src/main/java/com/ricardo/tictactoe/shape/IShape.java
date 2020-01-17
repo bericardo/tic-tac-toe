@@ -1,4 +1,4 @@
-package com.ricardo.tictactoe;
+package com.ricardo.tictactoe.shape;
 
 public interface IShape {
     boolean compare(IShape aShape);

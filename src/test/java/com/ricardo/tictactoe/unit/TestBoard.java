@@ -1,5 +1,9 @@
-package com.ricardo.tictactoe;
+package com.ricardo.tictactoe.unit;
 
+import com.ricardo.tictactoe.Board;
+import com.ricardo.tictactoe.InvalidPositionException;
+import com.ricardo.tictactoe.shape.Cross;
+import com.ricardo.tictactoe.shape.IShape;
 import org.junit.Assert;
 import org.junit.Test;
 

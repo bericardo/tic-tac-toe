@@ -1,5 +1,8 @@
 package com.ricardo.tictactoe;
 
+import com.ricardo.tictactoe.cell.Cell;
+import com.ricardo.tictactoe.shape.IShape;
+
 import java.util.ArrayList;
 
 public class Column {

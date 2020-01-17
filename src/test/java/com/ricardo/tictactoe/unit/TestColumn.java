@@ -1,5 +1,9 @@
-package com.ricardo.tictactoe;
+package com.ricardo.tictactoe.unit;
 
+import com.ricardo.tictactoe.Column;
+import com.ricardo.tictactoe.shape.Circle;
+import com.ricardo.tictactoe.shape.Cross;
+import com.ricardo.tictactoe.shape.IShape;
 import org.junit.Assert;
 import org.junit.Test;
 

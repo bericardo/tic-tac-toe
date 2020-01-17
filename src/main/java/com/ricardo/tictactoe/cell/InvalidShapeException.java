@@ -1,4 +1,4 @@
-package com.ricardo.tictactoe;
+package com.ricardo.tictactoe.cell;
 
 public class InvalidShapeException extends RuntimeException {
 }

@@ -1,4 +1,6 @@
-package com.ricardo.tictactoe;
+package com.ricardo.tictactoe.cell;
+
+import com.ricardo.tictactoe.shape.IShape;
 
 public class CellFree implements ICellState {
     public boolean forTest_isFree() {

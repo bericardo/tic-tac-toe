@@ -1,4 +1,4 @@
-package com.ricardo.tictactoe;
+package com.ricardo.tictactoe.shape;
 
 public class Circle implements IShape {
     public boolean compare(IShape aShape) {

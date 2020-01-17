@@ -1,5 +1,10 @@
-package com.ricardo.tictactoe;
+package com.ricardo.tictactoe.unit;
 
+import com.ricardo.tictactoe.cell.Cell;
+import com.ricardo.tictactoe.cell.InvalidShapeException;
+import com.ricardo.tictactoe.shape.Circle;
+import com.ricardo.tictactoe.shape.Cross;
+import com.ricardo.tictactoe.shape.IShape;
 import org.junit.Assert;
 import org.junit.Test;
 
