@@ -24,15 +24,15 @@ public class TestRow {
         Row row = new Row(this.SIZE);
         IShape cross = new Cross();
         int rowPosition = 2;
-        boolean good = false;
+        boolean validPosition = false;
 
         try {
             row.putShape(cross, rowPosition);
-            good = true;
+            validPosition = true;
         } catch (Exception e) {
         }
 
-        Assert.assertEquals(true, good);
+        Assert.assertEquals(true, validPosition);
     }
 
     @Test

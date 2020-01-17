@@ -24,13 +24,16 @@ public class TestColumn {
         Column col = new Column(this.SIZE);
         IShape cross = new Cross();
         int colPosition = 2;
+        boolean validPosition = false;
 
         try {
             col.putShape(cross, colPosition);
-            Assert.assertTrue(true);
+            validPosition = true;
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        Assert.assertEquals(true, validPosition);
     }
 
     @Test

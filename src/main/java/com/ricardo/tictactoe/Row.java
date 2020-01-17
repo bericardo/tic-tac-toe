@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class Row {
     private ArrayList<Cell> cellList;
 
-    public Row(int size) {
+    public Row(int boardSize) {
         this.cellList = new ArrayList<Cell>();
 
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < boardSize; i++)
             this.cellList.add(new Cell());
     }
 
@@ -21,7 +21,7 @@ public class Row {
     }
 
     public boolean checkForWinner(IShape aShape) {
-        for(Cell aCell : this.cellList) {
+        for (Cell aCell : this.cellList) {
             if (aCell.compare(aShape) == false) return false;
         }
         return true;
