@@ -2,27 +2,23 @@ package com.ricardo.tictactoe;
 
 public class Cell {
 
-    private boolean cellFree;
+    private ICellState state;
     private IShape shape;
 
     public Cell(){
-        this.cellFree = true;
+        this.state = new CellFree();
     }
 
     public boolean isFree() {
-        return this.cellFree;
+        return this.state.isFree();
     }
 
     public void putShape(IShape aShape){
-        if(!cellFree) return;
         if(aShape == null) throw new InvalidShapeException();
-
-        this.cellFree = false;
-        this.shape = aShape;
+        this.state = this.state.putShape(aShape);
     }
 
     public boolean compare(IShape aShape) {
-        if(cellFree) return false;
-        return this.shape.compare(aShape);
+        return this.state.compare(aShape);
     }
 }
