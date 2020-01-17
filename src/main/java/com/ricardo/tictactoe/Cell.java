@@ -1,9 +1,7 @@
 package com.ricardo.tictactoe;
 
 public class Cell {
-
     private ICellState state;
-    private IShape shape;
 
     public Cell(){
         this.state = new CellFree();
