@@ -41,8 +41,7 @@ public class Board {
 
     private boolean checkRows(IShape aShape) {
         for(Row aRow : this.rowList){
-            if(aRow.checkForWinner(aShape))
-                return true;
+            if(aRow.checkForWinner(aShape)) return true;
         }
         return false;
     }
