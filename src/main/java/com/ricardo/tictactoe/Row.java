@@ -11,7 +11,7 @@ public class Row {
     public Row(int size) {
         this.cellList = new ArrayList<Cell>();
 
-        for (int i = 0; i <= size; i++)
+        for (int i = 0; i < size; i++)
             this.cellList.add(new Cell());
     }
 
@@ -21,11 +21,10 @@ public class Row {
     }
 
     public boolean checkForWinner(IShape aShape) {
-        boolean res1 = this.cellList.get(0).compare(aShape);
-        boolean res2 = this.cellList.get(1).compare(aShape);
-        boolean res3 = this.cellList.get(2).compare(aShape);
-
-        return (res1 && res2 && res3);
+        for(Cell aCell : this.cellList) {
+            if (aCell.compare(aShape) == false) return false;
+        }
+        return true;
     }
 
     public boolean compareWithShapeInCell(IShape aShape, int cellPos) {

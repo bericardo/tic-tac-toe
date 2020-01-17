@@ -23,7 +23,7 @@ public class TestColumn {
     public void testPuttingShapeInValidPositionDoesntThrowException() {
         Column col = new Column(this.SIZE);
         IShape cross = new Cross();
-        int colPosition = 3;
+        int colPosition = 2;
 
         try {
             col.putShape(cross, colPosition);

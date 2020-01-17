@@ -23,7 +23,7 @@ public class TestRow {
     public void testPuttingShapeInValidPositionDoesntThrowException() {
         Row row = new Row(this.SIZE);
         IShape cross = new Cross();
-        int rowPosition = 3;
+        int rowPosition = 2;
         boolean good = false;
 
         try {
