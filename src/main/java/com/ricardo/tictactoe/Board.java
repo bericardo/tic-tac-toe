@@ -52,7 +52,11 @@ public class Board {
         }
         return false;
     }
-
+    
+    /*
+    * In a matrix, the positions being checked here would be
+    * (i,i) for i=1,2,3 but in this case are (j,j) for j=0,1,2
+    */
     private boolean checkFirstDiagonal(IShape aShape) {
 
         int cellPos = 0;
@@ -65,6 +69,10 @@ public class Board {
         return true;
     }
 
+    /*
+     * In a matrix, the positions being checked here would be
+     * (1,3),(2,2),(3,1) but in this case are (0,2),(1,1),(2,0)
+     */
     private boolean checkSecondDiagonal(IShape aShape) {
 
         int cellPos = BOARD_SIZE - 1;

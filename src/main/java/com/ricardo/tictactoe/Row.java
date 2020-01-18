@@ -27,6 +27,11 @@ public class Row {
         return true;
     }
 
+    /*
+     * Used for comparing a given shape with a specific cell of a Row.
+     * This is used only to check if one of the two diagonals have the
+     * same shape.
+    */
     public boolean compareWithShapeInCell(IShape aShape, int cellPos) {
         return this.cellList.get(cellPos).compare(aShape);
     }
