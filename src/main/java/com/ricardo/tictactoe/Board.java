@@ -55,10 +55,11 @@ public class Board {
 
     private boolean checkFirstDiagonal(IShape aShape) {
 
-        for (int i = 0; i < BOARD_SIZE; i++) {
-            Row aRow = this.rowList.get(i);
-            if (!aRow.compareWithShapeInCell(aShape, i))
+        int cellPos = 0;
+        for (Row aRow : this.rowList) {
+            if (!aRow.compareWithShapeInCell(aShape, cellPos))
                 return false;
+            cellPos++;
         }
 
         return true;
@@ -66,12 +67,11 @@ public class Board {
 
     private boolean checkSecondDiagonal(IShape aShape) {
 
-        int pos = BOARD_SIZE - 1;
-        for (int i = 0; i < BOARD_SIZE; i++) {
-            Row aRow = this.rowList.get(i);
-            if (!aRow.compareWithShapeInCell(aShape, pos))
+        int cellPos = BOARD_SIZE - 1;
+        for (Row aRow : this.rowList) {
+            if (!aRow.compareWithShapeInCell(aShape, cellPos))
                 return false;
-            pos--;
+            cellPos--;
         }
         return true;
     }

@@ -3,16 +3,17 @@ package com.ricardo.tictactoe.cell;
 import com.ricardo.tictactoe.shape.IShape;
 
 public class CellFree implements ICellState {
+
     public boolean forTest_isFree() {
         return true;
     }
 
-    public boolean compare(IShape aShape) {
+    public boolean compare(IShape aShape, IShape cellShape) {
         return false;
     }
 
-    public ICellState putShape(IShape aShape) {
+    public IShape putShape(IShape aShape, IShape cellShape) {
         if (aShape == null) throw new InvalidShapeException();
-        return new CellTaken(aShape);
+        return aShape;
     }
 }

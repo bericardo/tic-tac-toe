@@ -3,6 +3,7 @@ package com.ricardo.tictactoe.cell;
 import com.ricardo.tictactoe.shape.IShape;
 
 public class Cell {
+    private IShape shape;
     private ICellState state;
 
     public Cell() {
@@ -14,11 +15,12 @@ public class Cell {
     }
 
     public void putShape(IShape aShape) {
-        this.state = this.state.putShape(aShape);
+        this.shape = this.state.putShape(aShape, this.shape);
+        this.state = new CellTaken();
     }
 
     public boolean compare(IShape aShape) {
         if (aShape == null) throw new InvalidShapeException();
-        return this.state.compare(aShape);
+        return this.state.compare(aShape, this.shape);
     }
 }
