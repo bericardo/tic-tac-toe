@@ -5,7 +5,7 @@ import com.ricardo.tictactoe.shape.IShape;
 import java.util.ArrayList;
 
 public class Board {
-    private final int BOARD_SIZE = 3;
+    private static final int BOARD_SIZE = 3;
     private ArrayList<Row> rowList;
     private ArrayList<Column> colList;
 
@@ -52,7 +52,7 @@ public class Board {
         }
         return false;
     }
-    
+
     /*
     * In a matrix, the positions being checked here would be
     * (i,i) for i=1,2,3 but in this case are (j,j) for j=0,1,2
