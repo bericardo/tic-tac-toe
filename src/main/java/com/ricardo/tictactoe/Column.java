@@ -23,7 +23,7 @@ public class Column {
 
     public boolean checkForWinner(IShape aShape) {
         for (Cell aCell : this.cellList) {
-            if (aCell.compare(aShape) == false) return false;
+            if (!aCell.compare(aShape)) return false;
         }
         return true;
     }
