@@ -8,11 +8,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestRow {
-    private final int SIZE = 3;
+    private final int BOARD_SIZE = 3;
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void testPuttingShapeInInvalidPositionThrowException() {
-        Row row = new Row(this.SIZE);
+        Row row = new Row(this.BOARD_SIZE);
         IShape cross = new Cross();
         int rowPosition = 4;
 
@@ -21,7 +21,7 @@ public class TestRow {
 
     @Test
     public void testPuttingShapeInValidPositionDoesntThrowException() {
-        Row row = new Row(this.SIZE);
+        Row row = new Row(this.BOARD_SIZE);
         IShape cross = new Cross();
         int rowPosition = 2;
         boolean validPosition = false;
@@ -37,7 +37,7 @@ public class TestRow {
 
     @Test
     public void testAllColumnCellAreEmptyNoOneWinsReturnFalse() {
-        Row row = new Row(this.SIZE);
+        Row row = new Row(this.BOARD_SIZE);
         IShape cross = new Cross();
 
         boolean gameOver = row.checkForWinner(cross);
@@ -47,7 +47,7 @@ public class TestRow {
 
     @Test
     public void testAllCellHaveTheSameShapeGameOverReturnTrue() {
-        Row row = new Row(this.SIZE);
+        Row row = new Row(this.BOARD_SIZE);
         IShape cross = new Cross();
         row.putShape(cross, 0);
         row.putShape(cross, 1);
@@ -60,7 +60,7 @@ public class TestRow {
 
     @Test
     public void testWhenCellHaveDifferentShapesNoOneWinsReturnFalse() {
-        Row row = new Row(this.SIZE);
+        Row row = new Row(this.BOARD_SIZE);
         IShape cross = new Cross();
         IShape circle = new Circle();
         row.putShape(cross, 0);
