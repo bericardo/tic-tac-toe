@@ -10,7 +10,7 @@ import org.junit.Test;
 public class TestBoard {
 
     @Test
-    public void testPlacingSameShapeOnARowWinsGameReturnTrue() {
+    public void testPlacingSameShapeOnARowWinsMatchReturnTrue() {
         Board board = new Board();
         IShape cross = new Cross();
         board.putShape(cross, 0, 0);
@@ -23,7 +23,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testPlacingSameShapeOnAColumnWinsGameReturnTrue() {
+    public void testPlacingSameShapeOnAColumnWinsMatchReturnTrue() {
         Board board = new Board();
         IShape cross = new Cross();
         board.putShape(cross, 0, 0);
@@ -62,7 +62,7 @@ public class TestBoard {
     }
 
     @Test(expected = InvalidPositionException.class)
-    public void testPassingCellPositionGreaterThan2ThrowException() {
+    public void testPassingPositionGreaterThanBoardSizeThrowException() {
         Board board = new Board();
         IShape cross = new Cross();
 
@@ -70,7 +70,7 @@ public class TestBoard {
     }
 
     @Test(expected = InvalidPositionException.class)
-    public void testPassingCellPositionLessThan0ThrowException() {
+    public void testPassingNegativePositionThrowException() {
         Board board = new Board();
         IShape cross = new Cross();
 
