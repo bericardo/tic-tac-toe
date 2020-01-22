@@ -2,8 +2,8 @@
 
 | Method | Description |
 | --- | --- |
-| `public void putShape(IShape aShape,int rowPos,int colPos)` | Returns nothing. Puts an *IShape* on the board where *rowPos* (Row Position) and *colPos* (Column Position) is the position of the cell. Throws an exception if cell's position is negative or greater than the board size |
-| `public boolean checkForWinners(aShape : IShape)` | Returns *true* if a Row, Column or Diagonal have the same shape on three cells. |
+| `public void putShape(IShape aShape,int rowPos,int colPos)` | Returns nothing. Puts an *IShape* on the board where *rowPos* (Row Position) and *colPos* (Column Position) is the position of the cell. |
+| `public boolean checkForWinners(aShape : IShape)` | Returns *true* if a Row, Column or Diagonal have the same shape in all of its cells. |
 
 # Class Column
 
