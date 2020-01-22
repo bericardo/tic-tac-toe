@@ -10,14 +10,14 @@
 
 | Method | Description |
 | --- | --- |
-| `public void putShape(IShape aShape, int cellPos)` | Returns nothing. Puts an *IShape* in a cell of the Column where *cellPos* is the position of the cell. |
+| `public boolean putShape(IShape aShape, int cellPos)` | Returns *true* if the shape was placed. Puts an *IShape* in a cell of the Column where *cellPos* is the position of the cell. |
 | `public boolean checkForWinner(IShape aShape)` | Returns *true* if all of the shapes stored in its cells are equal to *aShape*, *false* if any of them is different or if the cell is empty. |
 
 # Class Row
 
 | Method | Description |
 | --- | --- |
-| `public void putShape(IShape aShape, int cellPos)` | Returns nothing. Puts an *IShape* in a cell of the Row where *cellPos* is the position of the cell. |
+| `public boolean putShape(IShape aShape, int cellPos)` | Returns *true* if the shape was placed. Puts an *IShape* in a cell of the Row where *cellPos* is the position of the cell. |
 | `public boolean checkForWinner(IShape aShape)` | Returns *true* if all of the shapes stored in its cells are equal to *aShape*, *false* if any of them is different or if the cell is empty. |
 
 # Class Cell
@@ -25,7 +25,7 @@
 | Method | Description |
 | --- | --- |
 | `public boolean forTest_isFree()` | Returns *true* if the cell is empty, *false* if is not. |
-| `public void putShape(IShape aShape)` | Returns nothing. Puts *aShape* in the cell. |
+| `public boolean putShape(IShape aShape)` | Returns *true* if the shape was placed. Puts *aShape* in the cell. |
 | `public boolean compare(IShape aShape)` | Returns *true* if the shape stored in the cell is equal to *aShape*. If the shape is different or the cell is empty( *CellFree* ), it returns *false*. |
 
 # Exceptions
