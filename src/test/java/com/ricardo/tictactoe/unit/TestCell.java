@@ -80,4 +80,14 @@ public class TestCell {
 
         cell.compare(circle);
     }
+
+    @Test
+    public void testIfShapeWasSuccessfulyPlacedReturnTrue(){
+        Cell cell = new Cell();
+        Cross cross = new Cross();
+
+        boolean shapePlaced = cell.putShape(cross);
+
+        Assert.assertEquals(true, shapePlaced);
+    }
 }

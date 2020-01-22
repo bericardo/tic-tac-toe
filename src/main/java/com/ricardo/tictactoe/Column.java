@@ -16,9 +16,9 @@ public class Column {
             this.cellList.add(new Cell());
     }
 
-    public void putShape(IShape aShape, int cellPos) {
+    public boolean putShape(IShape aShape, int cellPos) {
         Cell cell = this.cellList.get(cellPos);
-        cell.putShape(aShape);
+        return cell.putShape(aShape);
     }
 
     public boolean checkForWinner(IShape aShape) {

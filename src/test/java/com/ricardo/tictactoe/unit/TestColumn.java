@@ -1,6 +1,7 @@
 package com.ricardo.tictactoe.unit;
 
 import com.ricardo.tictactoe.Column;
+import com.ricardo.tictactoe.Row;
 import com.ricardo.tictactoe.shape.Circle;
 import com.ricardo.tictactoe.shape.Cross;
 import com.ricardo.tictactoe.shape.IShape;
@@ -73,5 +74,15 @@ public class TestColumn {
         boolean gameOverFinal = gameOver1 || gameOver2;
 
         Assert.assertEquals(false, gameOverFinal);
+    }
+
+    @Test
+    public void testIfShapeWasSuccessfulyPlacedReturnTrue(){
+        Column col = new Column(this.BOARD_SIZE);
+        Cross cross = new Cross();
+
+        boolean shapePlaced = col.putShape(cross, 0);
+
+        Assert.assertEquals(true, shapePlaced);
     }
 }

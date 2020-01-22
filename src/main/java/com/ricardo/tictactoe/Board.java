@@ -6,10 +6,12 @@ import java.util.ArrayList;
 
 public class Board {
     private static final int BOARD_SIZE = 3;
+    private int shapeCounter;
     private ArrayList<Row> rowList;
     private ArrayList<Column> colList;
 
     public Board() {
+        this.shapeCounter = 0;
         this.rowList = new ArrayList<Row>();
         this.colList = new ArrayList<Column>();
 
@@ -25,8 +27,12 @@ public class Board {
 
         if (!rowInBounds || !colInBounds) throw new InvalidPositionException();
 
-        this.rowList.get(rowPos).putShape(aShape, colPos);
+        boolean shapePlacedSuccessfuly = this.rowList.get(rowPos).putShape(aShape, colPos);
         this.colList.get(colPos).putShape(aShape, rowPos);
+
+        if(shapePlacedSuccessfuly){
+            this.shapeCounter++;
+        }
     }
 
     public boolean checkForWinners(IShape aShape) {
@@ -37,6 +43,10 @@ public class Board {
         boolean diag2HasWinner = this.checkSecondDiagonal(aShape);
 
         return (rowHasWinner || colHasWinner || diag1HasWinner || diag2HasWinner);
+    }
+
+    public boolean isFilled() {
+        return (this.shapeCounter == BOARD_SIZE*BOARD_SIZE);
     }
 
     private boolean checkRows(IShape aShape) {

@@ -14,9 +14,11 @@ public class Cell {
         return this.state.forTest_isFree();
     }
 
-    public void putShape(IShape aShape) {
+    public boolean putShape(IShape aShape) {
         this.shape = this.state.putShape(aShape, this.shape);
         this.state = new CellTaken();
+
+        return this.shape.compare(aShape);
     }
 
     public boolean compare(IShape aShape) {
