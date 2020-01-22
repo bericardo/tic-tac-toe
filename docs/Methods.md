@@ -31,6 +31,6 @@
 
 | Exception | Description |
 | --- | --- |
-| `InvalidPositionException` | It is used in the *Board* class. This is thrown if the position of the cell, which is specified by passing two integers ( *rowPos* and *colPos* ), is out range. An invalid position is negative or greater than the board size. |
+| `InvalidPositionException` | It is used in the *Board* class. This is thrown if the position of the cell, which is specified by passing two integers ( *rowPos* and *colPos* ), is out range. A position is not valid if any of the two integers is  negative or greater than the board size. |
 | `InvalidShapeException` | It is used in the *Cell* class. This is thrown if we try to put a **Null** on the board instead of an *IShape*. |
 
