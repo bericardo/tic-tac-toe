@@ -82,7 +82,7 @@ public class TestCell {
     }
 
     @Test
-    public void testIfShapeWasSuccessfulyPlacedReturnTrue(){
+    public void testIfShapeWasSuccessfullyPlacedReturnTrue(){
         Cell cell = new Cell();
         Cross cross = new Cross();
 

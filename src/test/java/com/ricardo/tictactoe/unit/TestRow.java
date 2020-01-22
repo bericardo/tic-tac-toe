@@ -76,7 +76,7 @@ public class TestRow {
     }
 
     @Test
-    public void testIfShapeWasSuccessfulyPlacedReturnTrue(){
+    public void testIfShapeWasSuccessfullyPlacedReturnTrue(){
         Row row = new Row(this.BOARD_SIZE);
         Cross cross = new Cross();
 

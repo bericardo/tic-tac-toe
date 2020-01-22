@@ -27,10 +27,10 @@ public class Board {
 
         if (!rowInBounds || !colInBounds) throw new InvalidPositionException();
 
-        boolean shapePlacedSuccessfuly = this.rowList.get(rowPos).putShape(aShape, colPos);
+        boolean shapePlacedSuccessfully = this.rowList.get(rowPos).putShape(aShape, colPos);
         this.colList.get(colPos).putShape(aShape, rowPos);
 
-        if(shapePlacedSuccessfuly){
+        if(shapePlacedSuccessfully){
             this.shapeCounter++;
         }
     }
