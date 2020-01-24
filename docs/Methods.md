@@ -19,6 +19,7 @@
 | --- | --- |
 | `public boolean putShape(IShape aShape, int cellPos)` | Returns *true* if the shape was placed. Puts an *IShape* in a cell of the Row where *cellPos* is the position of the cell. |
 | `public boolean checkForWinner(IShape aShape)` | Returns *true* if all of the shapes stored in its cells are equal to *aShape*, *false* if any of them is different or if the cell is empty. |
+| `public boolean compareWithShapeInCell(IShape aShape, int cellPos)` | Returns *true* if the shape stored in the cell of position *cellPos* is equal to *aShape*. |
 
 # Class Cell
 
