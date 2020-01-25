@@ -9,52 +9,52 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestCell {
+
     @Test
-    public void testANewCellIsAlwaysFreeReturnTrue() {
+    public void testPutShapeInFreeCellReturnTrue(){
         Cell cell = new Cell();
+        Cross cross = new Cross();
 
-        boolean free = cell.forTest_isFree();
+        boolean shapePlacedSuccessfully = cell.putShape(cross);
 
-        Assert.assertEquals(true, free);
+        Assert.assertEquals(true, shapePlacedSuccessfully);
+    }
+    @Test
+    public void testPutShapeInTakenCellReturnFalse(){
+        Cell cellTaken = new Cell();
+        Cross cross = new Cross();
+
+        boolean shapePlacedSuccessfully = cellTaken.putShape(cross);
+
+        Assert.assertEquals(true, shapePlacedSuccessfully);
     }
 
     @Test
-    public void testCellIsNotFreeWhenHasShapeReturnFalse() {
-        Cell cell = new Cell();
-        IShape cross = new Cross();
-        cell.putShape(cross);
-
-        boolean free = cell.forTest_isFree();
-
-        Assert.assertEquals(false, free);
-    }
-
-    @Test
-    public void testPuttingNewShapeOnCellWhichHasAShapeDoesntChangeShapeAlreadyStored() {
+    public void testPlacingShapeInTakenCellDoesntOverrideShapeReturn() {
         Cell cell = new Cell();
         IShape cross = new Cross();
         IShape circle = new Circle();
         cell.putShape(cross);
-        cell.putShape(circle);
 
+        cell.putShape(circle);
         boolean sameShape = cell.compare(circle);
 
         Assert.assertEquals(false, sameShape);
     }
 
     @Test
-    public void testPutShapeInFreeCellStoresThatShapeReturnTrue() {
+    public void testReturnTrueIfCellStoredTheShapeWePut() {
         Cell cell = new Cell();
         IShape cross = new Cross();
-        cell.putShape(cross);
 
+        cell.putShape(cross);
         boolean sameShape = cell.compare(cross);
 
         Assert.assertEquals(true, sameShape);
     }
 
     @Test
-    public void testComparingShapeWithEmptyCellReturnFalse() {
+    public void testComparingAnyShapeWithEmptyCellReturnFalse() {
         Cell cell = new Cell();
         IShape cross = new Cross();
 
@@ -64,7 +64,7 @@ public class TestCell {
     }
 
     @Test(expected = InvalidShapeException.class)
-    public void testPlacingShapePointingToNullThrowException() {
+    public void testPlacingNullShapeInFreeCellThrowException() {
         Cell cell = new Cell();
         IShape cross = null;
 
@@ -72,22 +72,12 @@ public class TestCell {
     }
 
     @Test(expected = InvalidShapeException.class)
-    public void testCompareShapeWhichIsNullThrowException() {
+    public void testComparingShapeStoredInCellWithNullShapeThrowException() {
         Cell cell = new Cell();
         IShape cross = new Cross();
         IShape circle = null;
         cell.putShape(cross);
 
         cell.compare(circle);
-    }
-
-    @Test
-    public void testIfShapeWasSuccessfullyPlacedReturnTrue(){
-        Cell cell = new Cell();
-        Cross cross = new Cross();
-
-        boolean shapePlaced = cell.putShape(cross);
-
-        Assert.assertEquals(true, shapePlaced);
     }
 }

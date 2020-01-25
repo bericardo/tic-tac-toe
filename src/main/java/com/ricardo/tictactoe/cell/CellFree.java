@@ -4,10 +4,6 @@ import com.ricardo.tictactoe.shape.IShape;
 
 public class CellFree implements ICellState {
 
-    public boolean forTest_isFree() {
-        return true;
-    }
-
     public boolean compare(IShape aShape, IShape cellShape) {
         return false;
     }

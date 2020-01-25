@@ -10,10 +10,6 @@ public class Cell {
         this.state = new CellFree();
     }
 
-    public boolean forTest_isFree() {
-        return this.state.forTest_isFree();
-    }
-
     public boolean putShape(IShape aShape) {
         this.shape = this.state.putShape(aShape, this.shape);
         this.state = new CellTaken();
