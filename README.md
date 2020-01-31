@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/bericardo/tic-tac-toe.svg?branch=master)](https://travis-ci.org/bericardo/tic-tac-toe)
+[![Build Status](https://travis-ci.org/bericardo/tic-tac-toe.svg?branch=master)](https://travis-ci.org/bericardo/tic-tac-toe) 
+
+[![codecov](https://codecov.io/gh/bericardo/tic-tac-toe/branch/master/graph/badge.svg)](https://codecov.io/gh/bericardo/tic-tac-toe)
 
 # tic-tac-toe
 
