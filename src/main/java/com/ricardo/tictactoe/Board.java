@@ -20,7 +20,12 @@ public class Board {
             this.colList.add(new Column(BOARD_SIZE));
         }
     }
-
+    
+    /**
+    * @param aShape shape to be placed on the board
+    * @param rowPos row position where aShape will be placed
+    * @param colPos column position where aShape will be placed
+    */
     public void putShape(IShape aShape, int rowPos, int colPos) {
         boolean rowInBounds = ((rowPos >= 0) && (rowPos < BOARD_SIZE));
         boolean colInBounds = ((colPos >= 0) && (colPos < BOARD_SIZE));
@@ -35,6 +40,10 @@ public class Board {
         }
     }
 
+    /**
+    * @param aShape last shape placed on the board
+    * @return true if aShape won the match
+    */
     public boolean checkForWinners(IShape aShape) {
 
         boolean rowHasWinner = this.checkRows(aShape);
@@ -45,10 +54,17 @@ public class Board {
         return (rowHasWinner || colHasWinner || diag1HasWinner || diag2HasWinner);
     }
 
+    /**
+    * @return true if the board is completely filled
+    */
     public boolean isFilled() {
         return (this.shapeCounter == BOARD_SIZE*BOARD_SIZE);
     }
 
+    /**
+    * @param aShape shape which will be compared with every cell's shape
+    * @return true if every cell of one row contain a shape equal to aShape
+    */
     private boolean checkRows(IShape aShape) {
         for (Row aRow : this.rowList) {
             if (aRow.checkForWinner(aShape)) return true;
@@ -56,6 +72,11 @@ public class Board {
         return false;
     }
 
+    
+    /**
+    * @param aShape shape which will be compared with every cell's shape
+    * @return true if every cell of one column contain a shape equal to aShape
+    */
     private boolean checkColumns(IShape aShape) {
         for (Column aColumn : this.colList) {
             if (aColumn.checkForWinner(aShape)) return true;
@@ -63,9 +84,11 @@ public class Board {
         return false;
     }
 
-    /*
-    * In a matrix, the positions being checked here would be
-    * (i,i) for i=1,2,3 but in this case are (j,j) for j=0,1,2
+    /**
+    * The positions being checked here are (j,j) where j=0,1,2
+    *
+    * @param aShape shape which will be compared with every cell's shape
+    * @return true if every cell of the diagonal contain a shape equal to aShape
     */
     private boolean checkFirstDiagonal(IShape aShape) {
 
@@ -79,9 +102,11 @@ public class Board {
         return true;
     }
 
-    /*
-     * In a matrix, the positions being checked here would be
-     * (1,3),(2,2),(3,1) but in this case are (0,2),(1,1),(2,0)
+     /**
+     * The positions being checked here are (0,2),(1,1),(2,0).
+     *
+     * @param aShape shape which will be compared with every cell's shape
+     * @return true if every cell of the diagonal contain a shape equal to aShape
      */
     private boolean checkSecondDiagonal(IShape aShape) {
 
