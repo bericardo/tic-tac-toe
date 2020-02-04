@@ -1,14 +1,14 @@
 package com.ricardo.tictactoe.cell;
 
-import com.ricardo.tictactoe.shape.IShape;
+import com.ricardo.tictactoe.shape.Shape;
 
 public class CellTaken implements ICellState {
 
-    public boolean compare(IShape aShape, IShape cellShape) {
+    public boolean compare(Shape aShape, Shape cellShape) {
         return cellShape.compare(aShape);
     }
 
-    public IShape putShape(IShape aShape, IShape cellShape) {
+    public Shape putShape(Shape aShape, Shape cellShape) {
         return cellShape;
     }
 }

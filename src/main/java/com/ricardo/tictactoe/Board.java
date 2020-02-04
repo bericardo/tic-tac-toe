@@ -1,6 +1,6 @@
 package com.ricardo.tictactoe;
 
-import com.ricardo.tictactoe.shape.IShape;
+import com.ricardo.tictactoe.shape.Shape;
 
 import java.util.ArrayList;
 
@@ -26,25 +26,23 @@ public class Board {
     * @param rowPos row position where aShape will be placed
     * @param colPos column position where aShape will be placed
     */
-    public void putShape(IShape aShape, int rowPos, int colPos) {
+    public void putShape(Shape aShape, int rowPos, int colPos) {
         boolean rowInBounds = ((rowPos >= 0) && (rowPos < BOARD_SIZE));
         boolean colInBounds = ((colPos >= 0) && (colPos < BOARD_SIZE));
 
         if (!rowInBounds || !colInBounds) throw new InvalidPositionException();
 
-        boolean shapePlacedSuccessfully = this.rowList.get(rowPos).putShape(aShape, colPos);
+        this.rowList.get(rowPos).putShape(aShape, colPos);
         this.colList.get(colPos).putShape(aShape, rowPos);
 
-        if(shapePlacedSuccessfully){
-            this.shapeCounter++;
-        }
+        if(aShape.placedOnBoard()) this.shapeCounter++;
     }
 
     /**
     * @param aShape last shape placed on the board
     * @return true if aShape won the match
     */
-    public boolean checkForWinners(IShape aShape) {
+    public boolean checkForWinners(Shape aShape) {
 
         boolean rowHasWinner = this.checkRows(aShape);
         boolean colHasWinner = this.checkColumns(aShape);
@@ -65,7 +63,7 @@ public class Board {
     * @param aShape shape which will be compared with every cell's shape
     * @return true if every cell of one row contain a shape equal to aShape
     */
-    private boolean checkRows(IShape aShape) {
+    private boolean checkRows(Shape aShape) {
         for (Row aRow : this.rowList) {
             if (aRow.checkForWinner(aShape)) return true;
         }
@@ -77,7 +75,7 @@ public class Board {
     * @param aShape shape which will be compared with every cell's shape
     * @return true if every cell of one column contain a shape equal to aShape
     */
-    private boolean checkColumns(IShape aShape) {
+    private boolean checkColumns(Shape aShape) {
         for (Column aColumn : this.colList) {
             if (aColumn.checkForWinner(aShape)) return true;
         }
@@ -90,7 +88,7 @@ public class Board {
     * @param aShape shape which will be compared with every cell's shape
     * @return true if every cell of the diagonal contain a shape equal to aShape
     */
-    private boolean checkFirstDiagonal(IShape aShape) {
+    private boolean checkFirstDiagonal(Shape aShape) {
 
         int cellPos = 0;
         for (Row aRow : this.rowList) {
@@ -108,7 +106,7 @@ public class Board {
      * @param aShape shape which will be compared with every cell's shape
      * @return true if every cell of the diagonal contain a shape equal to aShape
      */
-    private boolean checkSecondDiagonal(IShape aShape) {
+    private boolean checkSecondDiagonal(Shape aShape) {
 
         int cellPos = BOARD_SIZE - 1;
         for (Row aRow : this.rowList) {

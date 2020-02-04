@@ -1,15 +1,16 @@
 package com.ricardo.tictactoe.cell;
 
-import com.ricardo.tictactoe.shape.IShape;
+import com.ricardo.tictactoe.shape.Shape;
 
 public class CellFree implements ICellState {
 
-    public boolean compare(IShape aShape, IShape cellShape) {
+    public boolean compare(Shape aShape, Shape cellShape) {
         return false;
     }
 
-    public IShape putShape(IShape aShape, IShape cellShape) {
+    public Shape putShape(Shape aShape, Shape cellShape) {
         if (aShape == null) throw new InvalidShapeException();
+        aShape.setPlaced();
         return aShape;
     }
 }

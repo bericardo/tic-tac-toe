@@ -1,7 +1,7 @@
 package com.ricardo.tictactoe;
 
 import com.ricardo.tictactoe.cell.Cell;
-import com.ricardo.tictactoe.shape.IShape;
+import com.ricardo.tictactoe.shape.Shape;
 
 import java.util.ArrayList;
 
@@ -16,12 +16,12 @@ public class Column {
             this.cellList.add(new Cell());
     }
 
-    public boolean putShape(IShape aShape, int cellPos) {
+    public void putShape(Shape aShape, int cellPos) {
         Cell cell = this.cellList.get(cellPos);
-        return cell.putShape(aShape);
+        cell.putShape(aShape);
     }
 
-    public boolean checkForWinner(IShape aShape) {
+    public boolean checkForWinner(Shape aShape) {
         for (Cell aCell : this.cellList) {
             if (!aCell.compare(aShape)) return false;
         }

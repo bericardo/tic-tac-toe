@@ -4,7 +4,7 @@ import com.ricardo.tictactoe.Board;
 import com.ricardo.tictactoe.InvalidPositionException;
 import com.ricardo.tictactoe.shape.Circle;
 import com.ricardo.tictactoe.shape.Cross;
-import com.ricardo.tictactoe.shape.IShape;
+import com.ricardo.tictactoe.shape.Shape;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,7 +13,7 @@ public class TestBoard {
     @Test
     public void testPlacingSameShapeOnARowWinsMatchReturnTrue() {
         Board board = new Board();
-        IShape cross = new Cross();
+        Shape cross = new Cross();
         board.putShape(cross, 0, 0);
         board.putShape(cross, 0, 1);
         board.putShape(cross, 0, 2);
@@ -26,7 +26,7 @@ public class TestBoard {
     @Test
     public void testPlacingSameShapeOnAColumnWinsMatchReturnTrue() {
         Board board = new Board();
-        IShape cross = new Cross();
+        Shape cross = new Cross();
         board.putShape(cross, 0, 0);
         board.putShape(cross, 1, 0);
         board.putShape(cross, 2, 0);
@@ -39,7 +39,7 @@ public class TestBoard {
     @Test
     public void testPlacingSameShapeOnFirstDiagonalWinsMatchReturnTrue() {
         Board board = new Board();
-        IShape cross = new Cross();
+        Shape cross = new Cross();
         board.putShape(cross, 0, 0);
         board.putShape(cross, 1, 1);
         board.putShape(cross, 2, 2);
@@ -52,7 +52,7 @@ public class TestBoard {
     @Test
     public void testPlacingSameShapeOnSecondDiagonalWinsMatchReturnTrue() {
         Board board = new Board();
-        IShape cross = new Cross();
+        Shape cross = new Cross();
         board.putShape(cross, 0, 2);
         board.putShape(cross, 1, 1);
         board.putShape(cross, 2, 0);
@@ -65,7 +65,7 @@ public class TestBoard {
     @Test(expected = InvalidPositionException.class)
     public void testPassingPositionGreaterThanBoardSizeThrowException() {
         Board board = new Board();
-        IShape cross = new Cross();
+        Shape cross = new Cross();
 
         board.putShape(cross, 3, 3);
     }
@@ -73,7 +73,7 @@ public class TestBoard {
     @Test(expected = InvalidPositionException.class)
     public void testPassingNegativePositionThrowException() {
         Board board = new Board();
-        IShape cross = new Cross();
+        Shape cross = new Cross();
 
         board.putShape(cross, -1, -1);
     }

@@ -1,7 +1,7 @@
 package com.ricardo.tictactoe;
 
 import com.ricardo.tictactoe.cell.Cell;
-import com.ricardo.tictactoe.shape.IShape;
+import com.ricardo.tictactoe.shape.Shape;
 
 import java.util.ArrayList;
 
@@ -15,12 +15,12 @@ public class Row {
             this.cellList.add(new Cell());
     }
 
-    public boolean putShape(IShape aShape, int cellPos) {
+    public void putShape(Shape aShape, int cellPos) {
         Cell cell = this.cellList.get(cellPos);
-        return cell.putShape(aShape);
+        cell.putShape(aShape);
     }
 
-    public boolean checkForWinner(IShape aShape) {
+    public boolean checkForWinner(Shape aShape) {
         for (Cell aCell : this.cellList) {
             if (!aCell.compare(aShape)) return false;
         }
@@ -32,7 +32,7 @@ public class Row {
      * This is used only to check if one of the two diagonals have the
      * same shape.
     */
-    public boolean compareWithShapeInCell(IShape aShape, int cellPos) {
+    public boolean compareWithShapeInCell(Shape aShape, int cellPos) {
         return this.cellList.get(cellPos).compare(aShape);
     }
 }
