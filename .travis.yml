@@ -3,8 +3,6 @@ jdk:
   - oraclejdk8
   
 dist: trusty
- 
-sudo: false
 
 script: "mvn cobertura:cobertura"
 
