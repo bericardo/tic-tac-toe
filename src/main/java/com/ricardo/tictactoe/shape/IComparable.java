@@ -1,7 +1,7 @@
 package com.ricardo.tictactoe.shape;
 
-public interface IShape {
-    boolean compare(IShape aShape);
+public interface IComparable {
+    boolean compare(Shape aShape);
 
     boolean compare(Cross cross);
 
