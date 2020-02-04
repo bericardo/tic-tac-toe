@@ -1,9 +1,20 @@
 package com.ricardo.tictactoe.shape;
 
-public abstract class IShape {
-    abstract boolean compare(IShape aShape);
+public abstract class Shape implements IComparable {
+    private boolean placedOnBoard;
 
-    abstract boolean compare(Cross cross);
+    public Shape(){
+        this.placedOnBoard = false;
+    }
 
-    abstract boolean compare(Circle circle);
+    public void setPlaced(){
+        this.placedOnBoard = true;
+    }
+
+    public boolean placedOnBoard(){
+        if(!this.placedOnBoard) return false;
+
+        this.placedOnBoard = false;
+        return true;
+    }
 }

@@ -1,10 +1,10 @@
 package com.ricardo.tictactoe.cell;
 
-import com.ricardo.tictactoe.shape.IShape;
+import com.ricardo.tictactoe.shape.Shape;
 
 public interface ICellState {
 
-    boolean compare(IShape aShape, IShape cellShape);
+    boolean compare(Shape aShape, Shape cellShape);
 
-    IShape putShape(IShape aShape, IShape cellShape);
+    Shape putShape(Shape aShape, Shape cellShape);
 }

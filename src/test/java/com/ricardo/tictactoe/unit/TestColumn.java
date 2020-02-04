@@ -1,10 +1,9 @@
 package com.ricardo.tictactoe.unit;
 
 import com.ricardo.tictactoe.Column;
-import com.ricardo.tictactoe.Row;
 import com.ricardo.tictactoe.shape.Circle;
 import com.ricardo.tictactoe.shape.Cross;
-import com.ricardo.tictactoe.shape.IShape;
+import com.ricardo.tictactoe.shape.Shape;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +13,7 @@ public class TestColumn {
     @Test(expected = IndexOutOfBoundsException.class)
     public void testPuttingShapeInInvalidPositionThrowException() {
         Column col = new Column(this.BOARD_SIZE);
-        IShape cross = new Cross();
+        Shape cross = new Cross();
         int colPosition = 4;
 
         col.putShape(cross, colPosition);
@@ -23,7 +22,7 @@ public class TestColumn {
     @Test
     public void testPuttingShapeInValidPositionDoesntThrowException() {
         Column col = new Column(this.BOARD_SIZE);
-        IShape cross = new Cross();
+        Shape cross = new Cross();
         int colPosition = 2;
         boolean validPosition = false;
 
@@ -40,7 +39,7 @@ public class TestColumn {
     @Test
     public void testAllColumnCellAreEmptyNoOneWinsReturnFalse() {
         Column col = new Column(this.BOARD_SIZE);
-        IShape cross = new Cross();
+        Shape cross = new Cross();
 
         boolean gameOver = col.checkForWinner(cross);
 
@@ -50,7 +49,7 @@ public class TestColumn {
     @Test
     public void testAllCellHaveTheSameShapeGameOverReturnTrue() {
         Column col = new Column(this.BOARD_SIZE);
-        IShape cross = new Cross();
+        Shape cross = new Cross();
         col.putShape(cross, 0);
         col.putShape(cross, 1);
         col.putShape(cross, 2);
@@ -63,8 +62,8 @@ public class TestColumn {
     @Test
     public void testWhenCellHaveDifferentShapesNoOneWinsReturnFalse() {
         Column col = new Column(this.BOARD_SIZE);
-        IShape cross = new Cross();
-        IShape circle = new Circle();
+        Shape cross = new Cross();
+        Shape circle = new Circle();
         col.putShape(cross, 0);
         col.putShape(circle, 1);
         col.putShape(cross, 2);
@@ -74,15 +73,5 @@ public class TestColumn {
         boolean gameOverFinal = gameOver1 || gameOver2;
 
         Assert.assertEquals(false, gameOverFinal);
-    }
-
-    @Test
-    public void testIfShapeWasSuccessfullyPlacedReturnTrue(){
-        Column col = new Column(this.BOARD_SIZE);
-        Cross cross = new Cross();
-
-        boolean shapePlaced = col.putShape(cross, 0);
-
-        Assert.assertEquals(true, shapePlaced);
     }
 }

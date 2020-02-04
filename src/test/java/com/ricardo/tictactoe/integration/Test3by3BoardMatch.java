@@ -3,7 +3,7 @@ package com.ricardo.tictactoe.integration;
 import com.ricardo.tictactoe.Board;
 import com.ricardo.tictactoe.shape.Circle;
 import com.ricardo.tictactoe.shape.Cross;
-import com.ricardo.tictactoe.shape.IShape;
+import com.ricardo.tictactoe.shape.Shape;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,8 +12,8 @@ public class Test3by3BoardMatch {
     @Test
     public void testMatchCircleVsCrossWhereCircleWinsBoardIsNotFilled(){
         Board board = new Board();
-        IShape cross = new Cross();
-        IShape circle = new Circle();
+        Shape cross = new Cross();
+        Shape circle = new Circle();
         boolean gameOver = false;
         boolean boardFilled = false;
 
@@ -69,8 +69,8 @@ public class Test3by3BoardMatch {
     @Test
     public void testDrawGameMatchCircleVsCrossBoardIsFilled(){
         Board board = new Board();
-        IShape cross = new Cross();
-        IShape circle = new Circle();
+        Shape cross = new Cross();
+        Shape circle = new Circle();
         boolean gameOver = false;
         boolean boardFilled = false;
         boolean drawGame = false;

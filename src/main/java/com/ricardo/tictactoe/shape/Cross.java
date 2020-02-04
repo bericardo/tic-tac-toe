@@ -1,7 +1,7 @@
 package com.ricardo.tictactoe.shape;
 
-public class Cross implements IShape {
-    public boolean compare(IShape aShape) {
+public class Cross extends Shape {
+    public boolean compare(Shape aShape) {
         return aShape.compare(this);
     }
 
