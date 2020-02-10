@@ -14,8 +14,8 @@ public class TestCellState {
 
     // CELL FREE
     @Test
-    public void testCompareReturnsAlwaysFalseWhenCellFree(){
-        ICellState cellState  = new CellFree();
+    public void testCompareReturnsAlwaysFalseWhenCellFree() {
+        ICellState cellState = new CellFree();
         Shape newShape = new Cross();
         Shape cellShape = null;
 
@@ -24,9 +24,9 @@ public class TestCellState {
         Assert.assertEquals(false, isEqual);
     }
 
-    @Test (expected = InvalidShapeException.class)
-    public void testPuttingNullShapeInFreeCellReturnException(){
-        ICellState cellState  = new CellFree();
+    @Test(expected = InvalidShapeException.class)
+    public void testPuttingNullShapeInFreeCellReturnException() {
+        ICellState cellState = new CellFree();
         Shape newShape = null;
         Shape cellShape = null;
 
@@ -34,8 +34,8 @@ public class TestCellState {
     }
 
     @Test
-    public void testWhenCellFreeAndShapeNotNullReturnNewShapeToBeStored(){
-        ICellState cellState  = new CellFree();
+    public void testWhenCellFreeAndShapeNotNullReturnNewShapeToBeStored() {
+        ICellState cellState = new CellFree();
         Shape newShape = new Cross();
         Shape cellShape = null;
 
@@ -47,7 +47,7 @@ public class TestCellState {
     //CELL TAKEN
 
     @Test
-    public void testReturnTrueWhenShapeInCellEqualShapePassed(){
+    public void testReturnTrueWhenShapeInCellEqualShapePassed() {
         ICellState cellState = new CellTaken();
         Shape newCell = new Cross();
         Shape cellShape = new Cross();
@@ -58,7 +58,7 @@ public class TestCellState {
     }
 
     @Test
-    public void testReturnFalseWhenShapeInCellEqualShapePassed(){
+    public void testReturnFalseWhenShapeInCellEqualShapePassed() {
         ICellState cellState = new CellTaken();
         Shape newCell = new Cross();
         Shape cellShape = new Circle();
@@ -69,8 +69,8 @@ public class TestCellState {
     }
 
     @Test
-    public void testWhenCellTakenReturnShapeAlreadyStoredInCell(){
-        ICellState cellState  = new CellTaken();
+    public void testWhenCellTakenReturnShapeAlreadyStoredInCell() {
+        ICellState cellState = new CellTaken();
         Shape newShape = new Cross();
         Shape cellShape = new Circle();
 

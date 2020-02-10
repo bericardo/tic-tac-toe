@@ -63,7 +63,7 @@ public class TestCell {
     }
 
     @Test
-    public void testShapeSettedToTrueIfCellFree(){
+    public void testShapeSettedToTrueIfCellFree() {
         Cell cell = new Cell();
         Shape cross = new Cross();
 
@@ -74,7 +74,7 @@ public class TestCell {
     }
 
     @Test
-    public void testPlacedOnBoardReturnFalseIfCellTaken(){
+    public void testPlacedOnBoardReturnFalseIfCellTaken() {
         Cell cell = new Cell();
         Shape cross = new Cross();
         Shape circle = new Circle();

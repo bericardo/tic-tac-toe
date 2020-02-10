@@ -88,7 +88,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testWhenBoardIsEmptyIsNotFilledReturnFalse(){
+    public void testWhenBoardIsEmptyIsNotFilledReturnFalse() {
         Board board = new Board();
 
         boolean filled = board.isFilled();
@@ -97,10 +97,10 @@ public class TestBoard {
     }
 
     @Test
-    public void testWhenBoardHasOneShapeIsNotFilledReturnFalse(){
+    public void testWhenBoardHasOneShapeIsNotFilledReturnFalse() {
         Board board = new Board();
         Circle circle = new Circle();
-        board.putShape(circle,0,0);
+        board.putShape(circle, 0, 0);
 
         boolean filled = board.isFilled();
 
@@ -108,18 +108,18 @@ public class TestBoard {
     }
 
     @Test
-    public void testWhenTheBoardIsFilledCompletelyReturnTrue(){
+    public void testWhenTheBoardIsFilledCompletelyReturnTrue() {
         Board board = new Board();
         Cross cross = new Cross();
-        board.putShape(cross,0,0);
-        board.putShape(cross,0,1);
-        board.putShape(cross,0,2);
-        board.putShape(cross,1,0);
-        board.putShape(cross,1,1);
-        board.putShape(cross,1,2);
-        board.putShape(cross,2,0);
-        board.putShape(cross,2,1);
-        board.putShape(cross,2,2);
+        board.putShape(cross, 0, 0);
+        board.putShape(cross, 0, 1);
+        board.putShape(cross, 0, 2);
+        board.putShape(cross, 1, 0);
+        board.putShape(cross, 1, 1);
+        board.putShape(cross, 1, 2);
+        board.putShape(cross, 2, 0);
+        board.putShape(cross, 2, 1);
+        board.putShape(cross, 2, 2);
 
         boolean filled = board.isFilled();
 

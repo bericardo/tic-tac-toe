@@ -9,7 +9,7 @@ import org.junit.Test;
 public class TestShape {
 
     @Test
-    public void testCompareReturnTrueWhenShapesEqual(){
+    public void testCompareReturnTrueWhenShapesEqual() {
         Shape cross1 = new Cross();
         Shape cross2 = new Cross();
 
@@ -19,7 +19,7 @@ public class TestShape {
     }
 
     @Test
-    public void testCompareReturnFalseWhenShapesDifferent(){
+    public void testCompareReturnFalseWhenShapesDifferent() {
         Shape cross = new Cross();
         Shape circle = new Circle();
 
@@ -29,7 +29,7 @@ public class TestShape {
     }
 
     @Test
-    public void testShapeIsCreatedNotPlaced(){
+    public void testShapeIsCreatedNotPlaced() {
         Shape cross = new Cross();
 
         boolean placedOnBoard = cross.placedOnBoard();
