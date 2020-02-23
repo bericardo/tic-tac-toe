@@ -8,6 +8,13 @@ Create an object from the Board class, then you can place a shape on the board b
 
 This is a 3 by 3 board so the position of a cell should be (i,j) where i=0,1,2 and j=0,1,2.
 
+# Run Tests
+
+```
+cd tic-tac-toe/
+mvn test
+```
+
 # Example
 
 Let's put a cross shape on the top left corner of the board.
@@ -21,3 +28,4 @@ board.putShape(cross, 0, 0);
 boolean gameOver = board.checkForWinner(cross); // Checks if cross won.
 boolean filled = board.isFilled(); // Checks if the board is completely filled with shapes.
 ```
+
