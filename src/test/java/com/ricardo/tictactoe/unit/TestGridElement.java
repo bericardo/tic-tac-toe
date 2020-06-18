@@ -37,30 +37,30 @@ public class TestGridElement {
     }
 
     @Test
-    public void testAllColumnCellAreEmptyNoOneWinsReturnFalse() {
+    public void testCheckForWinnerReturnFalseWhenEveryCellIsEmpty() {
         GridElement row = new Row(this.BOARD_SIZE);
         Shape cross = new Cross();
 
-        boolean gameOver = row.checkForWinner(cross);
+        boolean crossHasWon = row.checkForWinner(cross);
 
-        Assert.assertEquals(false, gameOver);
+        Assert.assertEquals(false, crossHasWon);
     }
 
     @Test
-    public void testAllCellHaveTheSameShapeGameOverReturnTrue() {
+    public void testCheckForWinnerReturnTrueWhenEveryCellHasTheSameShape() {
         GridElement row = new Row(this.BOARD_SIZE);
         Shape cross = new Cross();
         row.putShape(cross, 0);
         row.putShape(cross, 1);
         row.putShape(cross, 2);
 
-        boolean gameOver = row.checkForWinner(cross);
+        boolean crossHasWon = row.checkForWinner(cross);
 
-        Assert.assertEquals(true, gameOver);
+        Assert.assertEquals(true, crossHasWon);
     }
 
     @Test
-    public void testWhenCellHaveDifferentShapesNoOneWinsReturnFalse() {
+    public void testCheckForWinnerReturnFalseWhenCellsHaveDifferentShape() {
         GridElement row = new Row(this.BOARD_SIZE);
         Shape cross = new Cross();
         Shape circle = new Circle();
@@ -68,10 +68,10 @@ public class TestGridElement {
         row.putShape(circle, 1);
         row.putShape(cross, 2);
 
-        boolean gameOver1 = row.checkForWinner(cross);
-        boolean gameOver2 = row.checkForWinner(circle);
-        boolean gameOverFinal = gameOver1 || gameOver2;
+        boolean crossHasWon = row.checkForWinner(cross);
+        boolean circleHasWon = row.checkForWinner(circle);
+        boolean crossOrCircleHasWon = crossHasWon || circleHasWon;
 
-        Assert.assertEquals(false, gameOverFinal);
+        Assert.assertEquals(false, crossOrCircleHasWon);
     }
 }

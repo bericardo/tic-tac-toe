@@ -14,7 +14,7 @@ public class TestCellState {
 
     // CELL FREE
     @Test
-    public void testCompareReturnsAlwaysFalseWhenCellFree() {
+    public void testCompareReturnFalseWhenCellIsNotOccupied() {
         ICellState cellState = new CellFree();
         Shape newShape = new Cross();
         Shape cellShape = null;

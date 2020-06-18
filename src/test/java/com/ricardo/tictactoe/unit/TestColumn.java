@@ -37,30 +37,30 @@ public class TestColumn {
     }
 
     @Test
-    public void testAllColumnCellAreEmptyNoOneWinsReturnFalse() {
+    public void testCheckForWinnerReturnFalseWhenEveryColumnCellIsEmpty() {
         Column col = new Column(this.BOARD_SIZE);
         Shape cross = new Cross();
 
-        boolean gameOver = col.checkForWinner(cross);
+        boolean crossHasWon = col.checkForWinner(cross);
 
-        Assert.assertEquals(false, gameOver);
+        Assert.assertEquals(false, crossHasWon);
     }
 
     @Test
-    public void testAllCellHaveTheSameShapeGameOverReturnTrue() {
+    public void testCheckForWinnerReturnTrueWhenARowHasTheSameShapeInEachColumn() {
         Column col = new Column(this.BOARD_SIZE);
         Shape cross = new Cross();
         col.putShape(cross, 0);
         col.putShape(cross, 1);
         col.putShape(cross, 2);
 
-        boolean gameOver = col.checkForWinner(cross);
+        boolean crossHasWon = col.checkForWinner(cross);
 
-        Assert.assertEquals(true, gameOver);
+        Assert.assertEquals(true, crossHasWon);
     }
 
     @Test
-    public void testWhenCellHaveDifferentShapesNoOneWinsReturnFalse() {
+    public void testCheckForWinnerReturnFalseWhenARowHasDifferentShapesInEachColumn() {
         Column col = new Column(this.BOARD_SIZE);
         Shape cross = new Cross();
         Shape circle = new Circle();
@@ -68,10 +68,10 @@ public class TestColumn {
         col.putShape(circle, 1);
         col.putShape(cross, 2);
 
-        boolean gameOver1 = col.checkForWinner(cross);
-        boolean gameOver2 = col.checkForWinner(circle);
-        boolean gameOverFinal = gameOver1 || gameOver2;
+        boolean crossHasWon = col.checkForWinner(cross);
+        boolean circleHasWon = col.checkForWinner(circle);
+        boolean crossOrCircleHasWon = crossHasWon || circleHasWon;
 
-        Assert.assertEquals(false, gameOverFinal);
+        Assert.assertEquals(false, crossOrCircleHasWon);
     }
 }
