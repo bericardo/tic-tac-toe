@@ -18,9 +18,9 @@ public class TestBoard {
         board.putShape(cross, 0, 1);
         board.putShape(cross, 0, 2);
 
-        boolean gameOver = board.checkForWinners(cross);
+        boolean crossHasWon = board.checkForWinners(cross);
 
-        Assert.assertEquals(true, gameOver);
+        Assert.assertEquals(true, crossHasWon);
     }
 
     @Test
@@ -31,9 +31,9 @@ public class TestBoard {
         board.putShape(cross, 1, 0);
         board.putShape(cross, 2, 0);
 
-        boolean gameOver = board.checkForWinners(cross);
+        boolean crossHasWon = board.checkForWinners(cross);
 
-        Assert.assertEquals(true, gameOver);
+        Assert.assertEquals(true, crossHasWon);
     }
 
     @Test
@@ -44,9 +44,9 @@ public class TestBoard {
         board.putShape(cross, 1, 1);
         board.putShape(cross, 2, 2);
 
-        boolean gameOver = board.checkForWinners(cross);
+        boolean crossHasWon = board.checkForWinners(cross);
 
-        Assert.assertEquals(true, gameOver);
+        Assert.assertEquals(true, crossHasWon);
     }
 
     @Test
@@ -57,9 +57,9 @@ public class TestBoard {
         board.putShape(cross, 1, 1);
         board.putShape(cross, 2, 0);
 
-        boolean gameOver = board.checkForWinners(cross);
+        boolean crossHasWon = board.checkForWinners(cross);
 
-        Assert.assertEquals(true, gameOver);
+        Assert.assertEquals(true, crossHasWon);
     }
 
     @Test(expected = InvalidPositionException.class)
@@ -81,10 +81,11 @@ public class TestBoard {
     @Test
     public void testCheckingForWinnersOnEmptyBoardReturnFalse() {
         Board board = new Board();
+        Shape cross = new Cross();
 
-        boolean thereIsAWinner = board.checkForWinners(new Cross());
+        boolean crossHasWon = board.checkForWinners(cross);
 
-        Assert.assertEquals(false, thereIsAWinner);
+        Assert.assertEquals(false, crossHasWon);
     }
 
     @Test
