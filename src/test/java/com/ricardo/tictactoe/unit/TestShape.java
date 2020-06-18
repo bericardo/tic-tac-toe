@@ -29,7 +29,7 @@ public class TestShape {
     }
 
     @Test
-    public void testShapeIsCreatedNotPlaced() {
+    public void testPlacedOnBoardReturnFalseWhenShapeHasNotYetBeenPlacedOnTheBoard() {
         Shape cross = new Cross();
 
         boolean placedOnBoard = cross.placedOnBoard();
