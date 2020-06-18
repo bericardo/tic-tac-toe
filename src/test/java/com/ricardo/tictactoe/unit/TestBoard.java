@@ -79,7 +79,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testCheckingForWinnersOnEmptyBoardReturnFalse() {
+    public void testCheckForWinnersReturnFalseWhenBoardIsEmpty() {
         Board board = new Board();
         Shape cross = new Cross();
 
@@ -89,7 +89,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testWhenBoardIsEmptyIsNotFilledReturnFalse() {
+    public void testIsFilledReturnFalseWhenBoardIsEmpty() {
         Board board = new Board();
 
         boolean filled = board.isFilled();
@@ -98,7 +98,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testWhenBoardHasOnlyOneShapeIsFilledReturnFalse() {
+    public void testIsFilledReturnFalseWhenBoardHasOnlyOneShape() {
         Board board = new Board();
         Circle circle = new Circle();
         board.putShape(circle, 0, 0);
@@ -109,7 +109,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testWhenTheBoardIsFilledCompletelyReturnTrue() {
+    public void testIsFilledReturnTrueWhenBoardIsCompletelyFilled() {
         Board board = new Board();
         Cross cross = new Cross();
         board.putShape(cross, 0, 0);
