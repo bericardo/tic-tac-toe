@@ -97,7 +97,7 @@ public class TestBoard {
     }
 
     @Test
-    public void testWhenBoardHasOneShapeIsNotFilledReturnFalse() {
+    public void testWhenBoardHasOnlyOneShapeIsFilledReturnFalse() {
         Board board = new Board();
         Circle circle = new Circle();
         board.putShape(circle, 0, 0);
