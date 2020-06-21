@@ -30,7 +30,7 @@ public class Test3by3BoardMatch {
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
 
-		cross = new Cross();
+	cross = new Cross();
         board.putShape(cross, 2,0);
         gameOver = board.checkForWinners(cross);
         boardFilled = board.isFilled();
@@ -38,7 +38,7 @@ public class Test3by3BoardMatch {
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
 
-		circle = new Circle();
+	circle = new Circle();
         board.putShape(circle, 2,2);
         gameOver = board.checkForWinners(circle);
         boardFilled = board.isFilled();
@@ -46,7 +46,7 @@ public class Test3by3BoardMatch {
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
 
-		cross = new Cross();
+	cross = new Cross();
         board.putShape(cross, 1,2);
         gameOver = board.checkForWinners(cross);
         boardFilled = board.isFilled();
@@ -54,7 +54,7 @@ public class Test3by3BoardMatch {
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
 
-		circle = new Circle();
+	circle = new Circle();
         board.putShape(circle, 0,0);
         gameOver = board.checkForWinners(circle);
         boardFilled = board.isFilled();
@@ -77,7 +77,7 @@ public class Test3by3BoardMatch {
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
 
-		Assert.assertEquals(true,circle.placedOnBoard());
+	Assert.assertEquals(true,circle.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
         Assert.assertEquals(false, drawGame);
@@ -87,7 +87,7 @@ public class Test3by3BoardMatch {
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
 
-		Assert.assertEquals(true, cross.placedOnBoard());
+	Assert.assertEquals(true, cross.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
         Assert.assertEquals(false, drawGame);
@@ -98,62 +98,62 @@ public class Test3by3BoardMatch {
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
 
-		Assert.assertEquals(true, circle.placedOnBoard());
+	Assert.assertEquals(true, circle.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
         Assert.assertEquals(false, drawGame);
 
-		circle = new Circle();
+	circle = new Circle();
         board.putShape(circle, 1,0);
         gameOver = board.checkForWinners(circle);
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
 
-		Assert.assertEquals(true,circle.placedOnBoard());
+	Assert.assertEquals(true,circle.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
         Assert.assertEquals(false, drawGame);
 
-		cross = new Cross();
+	cross = new Cross();
         board.putShape(cross, 1,1);
         gameOver = board.checkForWinners(cross);
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
 
-		Assert.assertEquals(true, cross.placedOnBoard());
+	Assert.assertEquals(true, cross.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
         Assert.assertEquals(false, drawGame);
 
-		cross = new Cross();
+	cross = new Cross();
         board.putShape(cross, 1,2);
         gameOver = board.checkForWinners(cross);
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
 
-		Assert.assertEquals(true, cross.placedOnBoard());
+	Assert.assertEquals(true, cross.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
         Assert.assertEquals(false, drawGame);
 
-		cross = new Cross();
+	cross = new Cross();
         board.putShape(cross, 2,0);
         gameOver = board.checkForWinners(cross);
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
 
-		Assert.assertEquals(true, cross.placedOnBoard());
+	Assert.assertEquals(true, cross.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
         Assert.assertEquals(false, drawGame);
 
-		circle = new Circle();
+	circle = new Circle();
         board.putShape(circle, 2,1);
         gameOver = board.checkForWinners(circle);
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
         
-		Assert.assertEquals(true, circle.placedOnBoard());
+	Assert.assertEquals(true, circle.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
         Assert.assertEquals(false, drawGame);
@@ -164,7 +164,7 @@ public class Test3by3BoardMatch {
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
 
-		Assert.assertEquals(false, circle.placedOnBoard());
+	Assert.assertEquals(false, circle.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(false, boardFilled);
         Assert.assertEquals(false, drawGame);
@@ -175,7 +175,7 @@ public class Test3by3BoardMatch {
         boardFilled = board.isFilled();
         drawGame = (!gameOver && boardFilled);
         
-		Assert.assertEquals(true, cross.placedOnBoard());
+	Assert.assertEquals(true, cross.placedOnBoard());
         Assert.assertEquals(false, gameOver);
         Assert.assertEquals(true, boardFilled);
         Assert.assertEquals(true, drawGame);
