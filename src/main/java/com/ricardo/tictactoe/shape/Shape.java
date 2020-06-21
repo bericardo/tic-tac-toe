@@ -11,14 +11,7 @@ public abstract class Shape implements IComparable {
         this.placedOnBoard = true;
     }
 
-    /**
-     *
-     * @return true if the shape was placed on the board
-     */
     public boolean placedOnBoard() {
-        if (!this.placedOnBoard) return false;
-
-        this.placedOnBoard = false;
-        return true;
+        return this.placedOnBoard;
     }
 }

@@ -50,8 +50,8 @@ public class TestRow {
         Row row = new Row(this.BOARD_SIZE);
         Shape cross = new Cross();
         row.putShape(cross, 0);
-        row.putShape(cross, 1);
-        row.putShape(cross, 2);
+        row.putShape(new Cross(), 1);
+        row.putShape(new Cross(), 2);
 
         boolean crossHasWon = row.checkForWinner(cross);
 
@@ -65,7 +65,7 @@ public class TestRow {
         Shape circle = new Circle();
         row.putShape(cross, 0);
         row.putShape(circle, 1);
-        row.putShape(cross, 2);
+        row.putShape(new Cross(), 2);
 
         boolean crossHasWon = row.checkForWinner(cross);
         boolean circleHasWon = row.checkForWinner(circle);

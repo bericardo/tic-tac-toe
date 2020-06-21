@@ -51,8 +51,8 @@ public class TestColumn {
         Column col = new Column(this.BOARD_SIZE);
         Shape cross = new Cross();
         col.putShape(cross, 0);
-        col.putShape(cross, 1);
-        col.putShape(cross, 2);
+        col.putShape(new Cross(), 1);
+        col.putShape(new Cross(), 2);
 
         boolean crossHasWon = col.checkForWinner(cross);
 
@@ -66,7 +66,7 @@ public class TestColumn {
         Shape circle = new Circle();
         col.putShape(cross, 0);
         col.putShape(circle, 1);
-        col.putShape(cross, 2);
+        col.putShape(new Cross(), 2);
 
         boolean crossHasWon = col.checkForWinner(cross);
         boolean circleHasWon = col.checkForWinner(circle);

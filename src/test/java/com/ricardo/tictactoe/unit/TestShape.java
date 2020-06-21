@@ -1,5 +1,6 @@
 package com.ricardo.tictactoe.unit;
 
+import com.ricardo.tictactoe.cell.Cell;
 import com.ricardo.tictactoe.shape.Circle;
 import com.ricardo.tictactoe.shape.Cross;
 import com.ricardo.tictactoe.shape.Shape;
@@ -36,4 +37,28 @@ public class TestShape {
 
         Assert.assertEquals(false, placedOnBoard);
     }
+    
+    @Test
+    public void testPlacedOnBoardReturnTrueAfterPlacingShapeInTheCell(){
+		Shape circle = new Circle();
+		Cell cell = new Cell();
+		cell.putShape(circle);
+		
+		boolean placedOnBoard = circle.placedOnBoard();
+		
+		Assert.assertEquals(true, placedOnBoard);
+	}
+	
+	@Test
+    public void testCheckingPlacedOnBoardTwiceReturnTrueAfterPlacingShapeInTheCell(){
+		Shape circle = new Circle();
+		boolean placedOnBoard = false;
+		Cell cell = new Cell();
+		cell.putShape(circle);
+		
+		placedOnBoard = circle.placedOnBoard();
+		placedOnBoard = circle.placedOnBoard();
+		
+		Assert.assertEquals(true, placedOnBoard);
+	}
 }

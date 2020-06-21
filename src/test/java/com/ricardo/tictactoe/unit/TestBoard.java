@@ -15,8 +15,8 @@ public class TestBoard {
         Board board = new Board();
         Shape cross = new Cross();
         board.putShape(cross, 0, 0);
-        board.putShape(cross, 0, 1);
-        board.putShape(cross, 0, 2);
+        board.putShape(new Cross(), 0, 1);
+        board.putShape(new Cross(), 0, 2);
 
         boolean crossHasWon = board.checkForWinners(cross);
 
@@ -28,8 +28,8 @@ public class TestBoard {
         Board board = new Board();
         Shape cross = new Cross();
         board.putShape(cross, 0, 0);
-        board.putShape(cross, 1, 0);
-        board.putShape(cross, 2, 0);
+        board.putShape(new Cross(), 1, 0);
+        board.putShape(new Cross(), 2, 0);
 
         boolean crossHasWon = board.checkForWinners(cross);
 
@@ -41,8 +41,8 @@ public class TestBoard {
         Board board = new Board();
         Shape cross = new Cross();
         board.putShape(cross, 0, 0);
-        board.putShape(cross, 1, 1);
-        board.putShape(cross, 2, 2);
+        board.putShape(new Cross(), 1, 1);
+        board.putShape(new Cross(), 2, 2);
 
         boolean crossHasWon = board.checkForWinners(cross);
 
@@ -54,8 +54,8 @@ public class TestBoard {
         Board board = new Board();
         Shape cross = new Cross();
         board.putShape(cross, 0, 2);
-        board.putShape(cross, 1, 1);
-        board.putShape(cross, 2, 0);
+        board.putShape(new Cross(), 1, 1);
+        board.putShape(new Cross(), 2, 0);
 
         boolean crossHasWon = board.checkForWinners(cross);
 
@@ -113,17 +113,36 @@ public class TestBoard {
         Board board = new Board();
         Cross cross = new Cross();
         board.putShape(cross, 0, 0);
-        board.putShape(cross, 0, 1);
-        board.putShape(cross, 0, 2);
-        board.putShape(cross, 1, 0);
-        board.putShape(cross, 1, 1);
-        board.putShape(cross, 1, 2);
-        board.putShape(cross, 2, 0);
-        board.putShape(cross, 2, 1);
-        board.putShape(cross, 2, 2);
+        board.putShape(new Cross(), 0, 1);
+        board.putShape(new Cross(), 0, 2);
+        board.putShape(new Cross(), 1, 0);
+        board.putShape(new Cross(), 1, 1);
+        board.putShape(new Cross(), 1, 2);
+        board.putShape(new Cross(), 2, 0);
+        board.putShape(new Cross(), 2, 1);
+        board.putShape(new Cross(), 2, 2);
 
         boolean filled = board.isFilled();
 
         Assert.assertEquals(true, filled);
     }
+    
+    @Test
+    public void testPlacingAShapeOnTopOfOtherShapeShouldNotIncreaseTheShapeCounter() {
+        Board board = new Board();
+        Cross cross = new Cross();
+        board.putShape(cross, 0, 0);
+        board.putShape(new Cross(), 0, 1);
+        board.putShape(new Cross(), 0, 2);
+        board.putShape(new Cross(), 1, 0);
+        board.putShape(new Cross(), 1, 1);
+        board.putShape(new Cross(), 1, 2);
+        board.putShape(new Cross(), 2, 0);
+        board.putShape(new Cross(), 2, 1);
+        board.putShape(new Cross(), 2, 1);
+
+        boolean filled = board.isFilled();
+
+        Assert.assertEquals(false, filled);
+	}
 }
