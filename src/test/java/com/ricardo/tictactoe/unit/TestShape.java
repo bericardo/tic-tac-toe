@@ -49,7 +49,7 @@ public class TestShape {
 		Assert.assertEquals(true, placedOnBoard);
 	}
 	
-	@Test
+    @Test
     public void testCheckingPlacedOnBoardTwiceReturnTrueAfterPlacingShapeInTheCell(){
 		Shape circle = new Circle();
 		boolean placedOnBoard = false;
