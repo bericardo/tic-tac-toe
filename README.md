@@ -9,11 +9,10 @@ Create an instance of the Board class and use  `putShape(Shape aShape, int rowPo
 Every time you want to place a shape on the board, you need to create a new instance of that shape class, you cannot re-use the same object. The default size of the board is 3x3 and a valid position is (row,column) where row = 0,1,2 and column=0,1,2.
 
 # Run Tests
-Once you've cloned the project, in order to run the tests, you should issue the following commands:
+Once you've cloned the project, in order to run the tests, you should go to the `tic-tac-toe/` folder and issue the following command:
 
 ```
-$ cd tic-tac-toe/
-$ mvn test
+mvn test
 ```
 
 # Example
